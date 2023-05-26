@@ -1,0 +1,26 @@
+﻿@model School_326.Models.Models.SubjectModel
+
+@{
+    ViewBag.Title = "GetSubjectDetails";
+}
+
+<h2>GetSubjectDetails</h2>
+
+<div>
+    <h4>SubjectModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SubjectName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubjectName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+  
+    @Html.ActionLink("Back to List", "GEtSubjects")
+</p>

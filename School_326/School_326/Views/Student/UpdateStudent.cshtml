@@ -1,0 +1,148 @@
+﻿@model School_326.Models.Models.StudentModel
+
+@{
+    ViewBag.Title = "UpdateStudent";
+}
+
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script defer src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<h2>UpdateStudent</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>StudentModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.SId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Mobile, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="form-check-inline form-check">
+                    @Html.RadioButton("gender", "Male", false, new { id = "male", @class = "form-check-input" })
+                    @Html.Label("Male", "Male", new { @for = "male", @class = "form-check-label " })
+                    &nbsp; &nbsp;
+                    @Html.RadioButton("gender", "Female", false, new { id = "female", @class = "form-check-input" })
+                    @Html.Label("Female", "Female", new { @for = "female", @class = "form-check-label " })
+                    &nbsp; &nbsp;
+                    @Html.RadioButton("gender", "Other", false, new { id = "other", @class = "form-check-input" })
+                    @Html.Label("Other", "Other", new { @for = "other", @class = "form-check-label " })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TeacherId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @if (ViewBag.TecList != null)
+                {
+                    @Html.DropDownList("TecIdC", new SelectList(ViewBag.TecList, "TecId", "FirstName"), new { @class = "form-control", @multiple = "multiple", id = "TECId1" })
+                    @Html.HiddenFor(m => m.TeacherId, new { @class = "TVal" })
+                    @Html.ValidationMessageFor(modal => modal.TeacherId, "", new { @class = "text-danger" })
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CountryName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @if (ViewBag.CoList != null)
+                {
+                    @Html.DropDownListFor(m => m.CoId, new SelectList(ViewBag.CoList, "CoId", "CountryName"), "--Select Country--", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(modal => modal.CoId, "", new { @class = "text-danger" })
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.StateName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.StId, new SelectList(""), "--Select State--", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.StId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CityName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.CiId, new SelectList(""), "--Select City--", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CiId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "GetStudents")
+</div>
+
+<script src="~/Content/common/main.js"></script>
+<script>
+    if ($('#TECId1').length > 0) {
+        $('#TECId1').val($('.TVal').val().split(","));
+        $('#TECId1').trigger("change");
+    }
+
+    $('#TECId1').change(function () {
+        $('.TVal').val(Array.from($('#TECId1 option:selected')).map((m) => m.value).join(","));
+    });
+
+    $(document).ready(function () {
+        $("#TECId1").select2({
+            placeholder: "Select Teachers",
+            multiple: true
+        });
+    })
+</script>

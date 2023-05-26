@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBTempModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CiId" />
+    </Key>
+    <Property Name="CiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="varchar" MaxLength="100" />
+    <Property Name="CoId" Type="int" />
+    <Property Name="StId" Type="int" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CoId" />
+    </Key>
+    <Property Name="CoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="StId" />
+    </Key>
+    <Property Name="StId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateName" Type="varchar" MaxLength="100" />
+    <Property Name="CoId" Type="int" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="SId" />
+    </Key>
+    <Property Name="SId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+    <Property Name="TeacherId" Type="varchar" MaxLength="100" />
+    <Property Name="CoId" Type="int" />
+    <Property Name="StId" Type="int" />
+    <Property Name="CiId" Type="int" />
+  </EntityType>
+  <EntityType Name="Subjects">
+    <Key>
+      <PropertyRef Name="SubId" />
+    </Key>
+    <Property Name="SubId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubjectName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Teachers">
+    <Key>
+      <PropertyRef Name="TecId" />
+    </Key>
+    <Property Name="TecId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+    <Property Name="SubjectId" Type="varchar" MaxLength="100" />
+    <Property Name="CoId" Type="int" />
+    <Property Name="StId" Type="int" />
+    <Property Name="CiId" Type="int" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="PassWord" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__City__StId__4B7734FF">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CoId" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="CoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__City__StId__4C6B5938">
+    <End Role="States" Type="Self.States" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="StId" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="StId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__States__CoId__489AC854">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="States" Type="Self.States" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CoId" />
+      </Principal>
+      <Dependent Role="States">
+        <PropertyRef Name="CoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Student__CiId__4F47C5E3">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CiId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="CiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Student__CoId__4D5F7D71">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CoId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="CoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Student__StId__4E53A1AA">
+    <End Role="States" Type="Self.States" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="StId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Teachers__CiId__5D95E53A">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Teachers" Type="Self.Teachers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CiId" />
+      </Principal>
+      <Dependent Role="Teachers">
+        <PropertyRef Name="CiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Teachers__CoId__5BAD9CC8">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Teachers" Type="Self.Teachers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CoId" />
+      </Principal>
+      <Dependent Role="Teachers">
+        <PropertyRef Name="CoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Teachers__StId__5CA1C101">
+    <End Role="States" Type="Self.States" Multiplicity="0..1" />
+    <End Role="Teachers" Type="Self.Teachers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="StId" />
+      </Principal>
+      <Dependent Role="Teachers">
+        <PropertyRef Name="StId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBTempModelStoreContainer">
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subjects" EntityType="Self.Subjects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teachers" EntityType="Self.Teachers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__City__StId__4B7734FF" Association="Self.FK__City__StId__4B7734FF">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__StId__4C6B5938" Association="Self.FK__City__StId__4C6B5938">
+      <End Role="States" EntitySet="States" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK__States__CoId__489AC854" Association="Self.FK__States__CoId__489AC854">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="States" EntitySet="States" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Student__CiId__4F47C5E3" Association="Self.FK__Student__CiId__4F47C5E3">
+      <End Role="City" EntitySet="City" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Student__CoId__4D5F7D71" Association="Self.FK__Student__CoId__4D5F7D71">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Student__StId__4E53A1AA" Association="Self.FK__Student__StId__4E53A1AA">
+      <End Role="States" EntitySet="States" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Teachers__CiId__5D95E53A" Association="Self.FK__Teachers__CiId__5D95E53A">
+      <End Role="City" EntitySet="City" />
+      <End Role="Teachers" EntitySet="Teachers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Teachers__CoId__5BAD9CC8" Association="Self.FK__Teachers__CoId__5BAD9CC8">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Teachers" EntitySet="Teachers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Teachers__StId__5CA1C101" Association="Self.FK__Teachers__StId__5CA1C101">
+      <End Role="States" EntitySet="States" />
+      <End Role="Teachers" EntitySet="Teachers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

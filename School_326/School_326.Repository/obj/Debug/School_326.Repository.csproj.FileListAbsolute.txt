@@ -1,0 +1,17 @@
+C:\Users\sit307\source\repos\School_326\School_326.Repository\bin\Debug\School_326.Repository.dll.config
+C:\Users\sit307\source\repos\School_326\School_326.Repository\bin\Debug\School_326.Repository.dll
+C:\Users\sit307\source\repos\School_326\School_326.Repository\bin\Debug\School_326.Repository.pdb
+C:\Users\sit307\source\repos\School_326\School_326.Repository\bin\Debug\EntityFramework.dll
+C:\Users\sit307\source\repos\School_326\School_326.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sit307\source\repos\School_326\School_326.Repository\bin\Debug\School_326.Helpers.dll
+C:\Users\sit307\source\repos\School_326\School_326.Repository\bin\Debug\School_326.Models.dll
+C:\Users\sit307\source\repos\School_326\School_326.Repository\bin\Debug\School_326.Helpers.pdb
+C:\Users\sit307\source\repos\School_326\School_326.Repository\bin\Debug\School_326.Models.pdb
+C:\Users\sit307\source\repos\School_326\School_326.Repository\bin\Debug\School_326.Models.dll.config
+C:\Users\sit307\source\repos\School_326\School_326.Repository\bin\Debug\EntityFramework.xml
+C:\Users\sit307\source\repos\School_326\School_326.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sit307\source\repos\School_326\School_326.Repository\obj\Debug\School_326.Repository.csproj.AssemblyReference.cache
+C:\Users\sit307\source\repos\School_326\School_326.Repository\obj\Debug\School_326.Repository.csproj.CoreCompileInputs.cache
+C:\Users\sit307\source\repos\School_326\School_326.Repository\obj\Debug\School_326.Repository.csproj.CopyComplete
+C:\Users\sit307\source\repos\School_326\School_326.Repository\obj\Debug\School_326.Repository.dll
+C:\Users\sit307\source\repos\School_326\School_326.Repository\obj\Debug\School_326.Repository.pdb

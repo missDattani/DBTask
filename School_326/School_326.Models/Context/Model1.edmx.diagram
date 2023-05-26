@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="29ce219c26e14a24bcc83668c0d3252e" Name="Diagram1">
+        <EntityTypeShape EntityType="DBTempModel.City" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBTempModel.Country" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBTempModel.State" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBTempModel.Student" Width="1.5" PointX="7.5" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBTempModel.Subject" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBTempModel.Teacher" Width="1.5" PointX="10.5" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBTempModel.User" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="DBTempModel.FK__City__StId__4B7734FF" ManuallyRouted="false" />
+        <AssociationConnector Association="DBTempModel.FK__City__StId__4C6B5938" ManuallyRouted="false" />
+        <AssociationConnector Association="DBTempModel.FK__Student__CiId__4F47C5E3" ManuallyRouted="false" />
+        <AssociationConnector Association="DBTempModel.FK__Teachers__CiId__5D95E53A" ManuallyRouted="false" />
+        <AssociationConnector Association="DBTempModel.FK__States__CoId__489AC854" ManuallyRouted="false" />
+        <AssociationConnector Association="DBTempModel.FK__Student__CoId__4D5F7D71" ManuallyRouted="false" />
+        <AssociationConnector Association="DBTempModel.FK__Teachers__CoId__5BAD9CC8" ManuallyRouted="false" />
+        <AssociationConnector Association="DBTempModel.FK__Student__StId__4E53A1AA" ManuallyRouted="false" />
+        <AssociationConnector Association="DBTempModel.FK__Teachers__StId__5CA1C101" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

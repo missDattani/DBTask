@@ -1,0 +1,86 @@
+﻿@model IEnumerable<School_326.Models.Context.Country>
+@using School_326.Models.Models
+@{
+    ViewBag.Title = "GetCountries";
+
+    Pager pager = new Pager();
+
+    int pageNo = 0;
+
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+<h2>Countries</h2>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["Error"]
+    </div>
+}
+
+<p>
+    @Html.ActionLink("Create New", "AddCountry")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CountryName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "UpdateCountry", new { CoId = item.CoId }) |
+                @Html.ActionLink("Details", "GetCountryDetails", new { CoId = item.CoId }) |
+                @Html.ActionLink("Delete", "DeleteCountry", new { CoId = item.CoId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div class="container" style="text-align-last: end">
+    @if (pager.TotalPages > 0)
+    {
+        <ul class="pagination">
+
+            @if (pager.CurrentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="/City/GetCities/1">First</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="/City/GetCities/@(pager.CurrentPage - 1)">Previous</a>
+                </li>
+            }
+
+            @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+            {
+                <li class="page-item @(pge == pager.CurrentPage ? "active" : "")">
+                    <a class="page-link" href="/City/GetCities/@pge">@pge</a>
+                </li>
+            }
+
+            @if (pager.CurrentPage < pager.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="/City/GetCities/@(pager.CurrentPage + 1)">Next</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="/City/GetCities/@(pager.TotalPages)">Last</a>
+                </li>
+            }
+        </ul>
+    }
+</div>

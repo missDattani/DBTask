@@ -1,0 +1,12 @@
+C:\Users\sit307\source\repos\School_326\School_326.Helpers\bin\Debug\School_326.Helpers.dll
+C:\Users\sit307\source\repos\School_326\School_326.Helpers\bin\Debug\School_326.Helpers.pdb
+C:\Users\sit307\source\repos\School_326\School_326.Helpers\bin\Debug\School_326.Models.dll
+C:\Users\sit307\source\repos\School_326\School_326.Helpers\bin\Debug\EntityFramework.dll
+C:\Users\sit307\source\repos\School_326\School_326.Helpers\bin\Debug\School_326.Models.pdb
+C:\Users\sit307\source\repos\School_326\School_326.Helpers\bin\Debug\School_326.Models.dll.config
+C:\Users\sit307\source\repos\School_326\School_326.Helpers\bin\Debug\EntityFramework.xml
+C:\Users\sit307\source\repos\School_326\School_326.Helpers\obj\Debug\School_326.Helpers.csproj.AssemblyReference.cache
+C:\Users\sit307\source\repos\School_326\School_326.Helpers\obj\Debug\School_326.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\sit307\source\repos\School_326\School_326.Helpers\obj\Debug\School_326.Helpers.csproj.CopyComplete
+C:\Users\sit307\source\repos\School_326\School_326.Helpers\obj\Debug\School_326.Helpers.dll
+C:\Users\sit307\source\repos\School_326\School_326.Helpers\obj\Debug\School_326.Helpers.pdb

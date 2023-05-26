@@ -1,0 +1,29 @@
+﻿@model SchoolMgmt_326.Model.Model.SubjectModel
+
+@{
+    ViewBag.Title = "GetSubjectDetails";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div class="container">
+    <h2>GetSubjectDetails</h2>
+
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SubjectName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SubjectName)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+
+        @Html.ActionLink("Back to List", "GetSubjects")
+    </p>
+</div>

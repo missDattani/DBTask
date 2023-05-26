@@ -1,0 +1,54 @@
+﻿@model SchoolMgmt_326.Model.Model.UserModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SignUp</title>
+    <link rel="stylesheet" href="~/Content/Theme/css/Style.css">
+</head>
+<body>
+    <h3>@ViewBag.message</h3>
+    <div class="login-box">
+        <h2>Sign Up</h2>
+        <h3 style="color:white;">@ViewBag.Error</h3>
+        @using (Html.BeginForm("SignIn", "User", FormMethod.Post))
+        {
+
+            <div class="user-box">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "from-control", id = "email", @name = "email", @placeholder = "Your Email" } })
+                @Html.ValidationMessageFor(model => model.Email, "")
+                <br />
+                @*<input type="text" name="" required="">*@
+                <label>EMAIL</label>
+                <br />
+            </div>
+            <div class="user-box">
+                @Html.EditorFor(model => model.PassWord, new { htmlAttributes = new { @class = "from-control", id = "pass", @name = "pass", @placeholder = "Your Password" } })
+                @Html.ValidationMessageFor(model => model.PassWord, "")
+                <br />
+                @*<input type="password" name="" required="">*@
+                <label>PASSWORD</label>
+                <br />
+            </div>
+            <button type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Login
+            </button>
+        }
+        <div>
+            <h4 class="text">Don''t have an account? &nbsp; <a href="/User/SignUp">Sign Up</a></h4>
+        </div>
+    </div>
+ 
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+</body>
+</html>

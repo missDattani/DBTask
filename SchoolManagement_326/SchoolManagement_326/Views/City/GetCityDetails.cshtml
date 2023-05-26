@@ -1,0 +1,45 @@
+﻿@model SchoolMgmt_326.Model.Model.CityModel
+
+@{
+    ViewBag.Title = "GetCityDetails";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div class="container">
+    <h2>GetCityDetails</h2>
+
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CityName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CityName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CoId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CoId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StId)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+
+        @Html.ActionLink("Back to List", "GetCities")
+    </p>
+</div>

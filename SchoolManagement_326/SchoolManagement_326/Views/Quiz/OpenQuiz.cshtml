@@ -1,0 +1,311 @@
+﻿
+@{
+    ViewBag.Title = "OpenQuiz";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<style>
+    .btn-circle {
+        width: 45px;
+        height: 45px;
+        padding: 6px 0px;
+        border-radius: 40px;
+        font-size: 15px;
+        text-align: center;
+        border:none;
+    }
+
+    hr {
+        border-top: 4px solid;
+        width: 90px; 
+    }
+    .hrcolor {
+    color:aqua;
+    }
+
+   
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mt-5">
+            <h2>Quiz Details</h2>
+        </div>
+        <div class="col-lg-6 mt-5">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="quiz">
+                Play Quiz
+            </button>
+        </div>
+    </div>
+    <div class="row text text-danger">Click On Play Quiz</div>
+        <div class="details">
+            <div class="row">
+                <div class="col-lg-2 mt-5">
+                    <h5 for="User">User Type:</h5>
+                </div>
+                <div class="col-lg-10 mt-5">
+                    <h5 id="usertext"></h5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2 mt-3">
+                    <h5 for="Dept">Department</h5>
+                </div>
+                <div class="col-lg-10 mt-3">
+                    <h5 id="depttext"></h5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2 mt-3">
+                    <h5 for="EventType">Event Type:</h5>
+                </div>
+                <div class="col-lg-10 mt-3">
+                    <h5 id="evetext"></h5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2 mt-3">
+                    <h5 for="EventName">Event Name:</h5>
+                </div>
+                <div class="col-lg-10 mt-3">
+                    <h5 id="eventext"></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container d-flex">
+                        <button type="button" class="btn-circle btn1">1</button><hr id="rule1"/>
+                        <button type="button" class="btn-circle btn2">2</button><hr id="rule2" />
+                        <button type="button" class="btn-circle btn3">3</button><hr id="rule3" />
+                        <button type="button" class="btn-circle btn4">4</button>
+                    </div>
+                    <div class="container Step1 mt-3" id="Users">
+                        <h5>1. Choose User</h5>
+                        <input type="radio" name="user" class="ml-2" value="Student" />&nbsp;Student<br />
+                        <input type="radio" name="user" class="ml-2" value="Faculty" />&nbsp;Faculty
+                    </div>
+
+                    <div class="container Step2 mt-3" id="Depts">
+                        <h5>2. Choose Deapartment</h5>
+                        <input type="radio" name="dept" class="ml-2" value="CE" />&nbsp;CE<br />
+                        <input type="radio" name="dept" class="ml-2" value="IT" />&nbsp;IT<br />
+                        <input type="radio" name="dept" class="ml-2" value="Mechanical" />&nbsp;Mechanical<br />
+                        <input type="radio" name="dept" class="ml-2" value="Civil" />&nbsp;Civil<br />
+                        <input type="radio" name="dept" class="ml-2" value="Electrical" />&nbsp;Electrical<br />
+                    </div>
+
+                    <div class="container Step3 mt-3" id="EveTypes">
+                        <h5>3. Choose Event Type</h5>
+                        <input type="radio" name="eventT" class="ml-2" id="tech" value="Technical" />&nbsp;Technical<br />
+                        <input type="radio" name="eventT" class="ml-2" id="ntech" value="Non-Technical" />&nbsp;Non-Technical<br />
+                        <input type="radio" name="eventT" class="ml-2" id="sport" value="Sports" />&nbsp;Sports<br />
+                        <input type="radio" name="eventT" class="ml-2" id="cult" value="Cultural" />&nbsp;Cultural<br />
+                    </div>
+
+                    <div class="container Step4 mt-3" id="Tech">
+                        <h5>4. Choose Technical Event</h5>
+                        <input type="radio" name="techie" class="ml-2" value="CodingNinjas" />&nbsp;CodingNinjas<br />
+                        <input type="radio" name="techie" class="ml-2" value="RoboWars" />&nbsp;RoboWars<br />
+                        <input type="radio" name="techie" class="ml-2" value="ElectFair" />&nbsp;ElectFair<br />
+                        <input type="radio" name="techie" class="ml-2" value="Sthapatya" />&nbsp;Sthapatya<br />
+                    </div>
+
+                    <div class="container Step4 mt-3" id="Nontech">
+                        <h5>4. Choose Non-Tech Events</h5>
+                        <input type="radio" name="ntechie" class="ml-2" value="Rangoli" />&nbsp;Rangoli<br />
+                        <input type="radio" name="ntechie" class="ml-2" value="Sketch Art" />&nbsp;Sketch Art<br />
+                        <input type="radio" name="ntechie" class="ml-2" value="Mehndi" />&nbsp;Mehndi<br />
+                        <input type="radio" name="ntechie" class="ml-2" value="Craft" />&nbsp;Craft<br />
+                    </div>
+
+                    <div class="container Step4 mt-3" id="Sports">
+                        <h5>4. Choose Sports Event</h5>
+                        <input type="radio" name="games" class="ml-2" value="Football" />&nbsp;Football<br />
+                        <input type="radio" name="games" class="ml-2" value="Chess" />&nbsp;Chess<br />
+                        <input type="radio" name="games" class="ml-2" value="Badminton" />&nbsp;Badminton<br />
+                        <input type="radio" name="games" class="ml-2" value="Cricket" />&nbsp;Cricket<br />
+                    </div>
+
+                    <div class="container Step4 mt-3" id="Culture">
+                        <h5>4. Choose Cultural Event</h5>
+                        <input type="radio" name="culture" class="ml-2" value="Dance" />&nbsp;Dance<br />
+                        <input type="radio" name="culture" class="ml-2" value="Singing" />&nbsp;Singing<br />
+                        <input type="radio" name="culture" class="ml-2" value="Drama" />&nbsp;Drama<br />
+                        <input type="radio" name="culture" class="ml-2" value="Poetry" />&nbsp;Poetry<br />
+                    </div>
+
+                    <div class="container Step5 mt-3">
+                        <div class="row"> <h5 class="mt-2">User Type:</h5>&nbsp;&nbsp;<p id="userT" class="mt-2"></p></div>
+                        <div class="row"><h5 class="mt-2">Department:</h5>&nbsp;&nbsp;<p id="deptD" class="mt-2"></p></div>
+                        <div class="row"><h5 class="mt-2">Event Type:</h5>&nbsp;&nbsp;<p id="eventT" class="mt-2"></p></div>
+                        <div class="row"> <h5 class="mt-2">Event Name:</h5>&nbsp;&nbsp;<p id="eventN" class="mt-2"></p></div>
+                    </div>
+
+                    <div class="modal-footer mt-3">
+                        <button type="button" class="btn btn-info" id="next">Next</button>
+                        <button type="button" class="btn btn-primary" id="saveM">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".details").hide();
+            $(".Step1").show();
+            $(".Step2").hide(); $(".Step3").hide(); $(".Step4").hide(); $(".Step5").hide(); $("#saveM").hide();
+
+            $("#next").click(function () {
+
+                if ($('input[name="user"]:checked').val()) {
+                    $(".Step2").show();
+                    $(".btn1").css('background-color', 'aqua');
+                    $("#rule1").addClass("hrcolor");
+                    $(".Step1").hide(); $(".Step3").hide(); $(".Step4").hide(); $(".Step5").hide(); $("#saveM").hide();
+                }
+
+                if ($('input[name="dept"]:checked').val()) {
+                    $(".btn2").css('background-color', 'aqua');
+                    $(".Step3").show();
+                    $("#rule2").addClass("hrcolor");
+                    $(".Step1").hide(); $(".Step2").hide(); $(".Step4").hide(); $(".Step5").hide(); $("#saveM").hide();
+                }
+
+                if ($('input[id="tech"]:checked').val()) {
+                    $("#Tech").show();
+                    $(".btn3").css('background-color', 'aqua');
+                    $("#rule3").addClass("hrcolor");
+                    $(".Step1").hide(); $(".Step2").hide(); $(".Step3").hide(); $(".Step5").hide(); $("#saveM").hide();
+                }
+
+                if ($('input[id="ntech"]:checked').val()) {
+                    $("#Nontech").show();
+                    $(".btn3").css('background-color', 'aqua');
+                    $("#rule3").addClass("hrcolor");
+                    $(".Step1").hide(); $(".Step2").hide(); $(".Step3").hide(); $(".Step5").hide(); $("#saveM").hide();
+                }
+
+                if ($('input[id="sport"]:checked').val()) {
+                    $("#Sports").show();
+                    $(".btn3").css('background-color', 'aqua');
+                    $("#rule3").addClass("hrcolor");
+                    $(".Step1").hide(); $(".Step2").hide(); $(".Step3").hide(); $(".Step5").hide(); $("#saveM").hide();
+                }
+
+                if ($('input[id="cult"]:checked').val()) {
+                    $("#Culture").show();
+                    $(".btn3").css('background-color', 'aqua');
+                    $("#rule3").addClass("hrcolor");
+                    $(".Step1").hide(); $(".Step2").hide(); $(".Step3").hide(); $(".Step5").hide(); $("#saveM").hide();
+                }
+
+                if ($('input[name="techie"]:checked').val() || $('input[name="ntechie"]:checked').val() || $('input[name="games"]:checked').val() || $('input[name="culture"]:checked').val()) {
+                    $(".Step5").show(); $("#saveM").show();
+                    $(".btn4").css('background-color', 'aqua');
+                    $(".Step1").hide(); $(".Step2").hide(); $(".Step3").hide(); $(".Step4").hide(); $("#next").hide();
+
+                    localStorage.setItem("Users", $('input[name="user"]:checked').val());
+                    localStorage.setItem("Depts", $('input[name="dept"]:checked').val());
+                    localStorage.setItem("EventTypes", $('input[name="eventT"]:checked').val())
+                    localStorage.setItem("Events", $('input[name="techie"]:checked').val() || $('input[name="ntechie"]:checked').val() || $('input[name="games"]:checked').val() || $('input[name="culture"]:checked').val());
+
+                    var user = localStorage.getItem("Users");
+                    $(".Step5 #userT").html(user);
+                    var department = localStorage.getItem("Depts");
+                    $(".Step5 #deptD").html(department);
+                    var eventType = localStorage.getItem("EventTypes");
+                    $(".Step5 #eventT").html(eventType);
+                    var event = localStorage.getItem("Events");
+                    $(".Step5 #eventN").html(event);
+                }
+
+            });
+
+            $("#saveM").click(function () {
+             
+                var user = localStorage.getItem("Users");
+                $("#usertext").html(user);
+                var department = localStorage.getItem("Depts");
+                $("#depttext").html(department);
+                var eventType = localStorage.getItem("EventTypes");
+                $("#evetext").html(eventType);
+                var event = localStorage.getItem("Events");
+                $("#eventext").html(event);
+                $("#close").click();
+                reset();
+                $(".details").show();
+            });
+
+
+            $("#quiz").click(function () {
+                $('.text').hide();
+                $(".details").hide();
+            })
+
+            $(".btn1").click(function () {
+                $(".Step1").show(); $("#next").show();
+                $(".Step2").hide(); $(".Step3").hide(); $(".Step4").hide(); $(".Step5").hide(); $("#saveM").hide();
+            });
+
+
+            $(".btn2").click(function () {
+                $(".Step3").show(); $("#next").show();
+                $(".Step1").hide(); $(".Step2").hide(); $(".Step4").hide(); $(".Step5").hide(); $("#saveM").hide();
+            });
+
+            $(".btn3").click(function () {
+                if ($('input[id="tech"]:checked').val()) {
+                    $("#Tech").show(); $("#next").show();
+                    $(".Step1").hide(); $(".Step2").hide(); $(".Step3").hide(); $(".Step5").hide(); $("#saveM").hide();
+                }
+
+                if ($('input[id="ntech"]:checked').val()) {
+                    $("#Nontech").show(); $("#next").show();
+                    $(".btn3").css('background-color', 'aqua');
+                    $(".Step1").hide(); $(".Step2").hide(); $(".Step3").hide(); $(".Step5").hide(); $("#saveM").hide();
+                }
+
+
+                if ($('input[id="sport"]:checked').val()) {
+                    $("#Sports").show();
+                    $("#next").show();
+                    $(".Step1").hide(); $(".Step2").hide(); $(".Step3").hide(); $(".Step5").hide(); $("#saveM").hide();
+                }
+
+                if ($('input[id="cult"]:checked').val()) {
+                    $("#Culture").show();
+                    $("#next").show();
+                    $(".Step1").hide(); $(".Step2").hide(); $(".Step3").hide(); $(".Step5").hide(); $("#saveM").hide();
+                }
+            });
+
+            $("#close").click(function () {
+                reset();
+            })
+
+        });
+        function reset() {
+            $(".Step2").hide();  $(".Step3").hide();  $(".Step4").hide(); $(".Step5").hide(); $("#saveM").hide();
+            $('.Step1').show(); $("#next").show();
+            $("input[type='radio']").prop("checked", false);
+            $(".modal-body button").css('background-color', "");
+            $(".modal-body hr").removeClass("hrcolor")
+        }
+    </script>

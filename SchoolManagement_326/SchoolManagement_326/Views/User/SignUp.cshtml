@@ -1,0 +1,73 @@
+﻿@model SchoolMgmt_326.Model.Model.UserModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SignUp</title>
+    <link rel="stylesheet" href="~/Content/Theme/css/Style.css">
+</head>
+<body>
+    <h3>@ViewBag.message</h3>
+    <div class="login-box">
+        <h2>Sign Up</h2>
+        @using (Html.BeginForm("SignUp", "User", FormMethod.Post))
+        {
+            <div class="user-box">
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "from-control", id = "fname", @name = "fname", @placeholder = "Enter FirstName" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "")
+                <br />
+                @*<input type="text" name="" required="">*@
+                <label>FIRST NAME</label>
+                <br />
+            </div>
+            <div class="user-box">
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "from-control", id = "lname", @name = "lname", @placeholder = "Enter LastName" } })
+                @Html.ValidationMessageFor(model => model.LastName, "")
+                <br />
+                @*<input type="text" name="" required="">*@
+                <label>LAST NAME</label>
+                <br />
+            </div>
+            <div class="user-box">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "from-control", id = "email", @name = "email", @placeholder = "Your Email" } })
+                @Html.ValidationMessageFor(model => model.Email, "")
+                <br />
+                @*<input type="text" name="" required="">*@
+                <label>EMAIL</label>
+                <br />
+            </div>
+            <div class="user-box">
+                @Html.EditorFor(model => model.PassWord, new { htmlAttributes = new { @class = "from-control", id = "pass", @name = "pass", @placeholder = "Your Password" } })
+                @Html.ValidationMessageFor(model => model.PassWord, "")
+                <br />
+                @*<input type="password" name="" required="">*@
+                <label>PASSWORD</label>
+                <br />
+            </div>
+            <div class="user-box">
+                @Html.EditorFor(model => model.ConfirmPassWord, new { htmlAttributes = new { @class = "from-control", id = "cpass", @name = "cpass", @placeholder = "Confirm Password" } })
+                @Html.ValidationMessageFor(model => model.ConfirmPassWord, "")
+                <br />
+                @*<input type="password" name="" required="">*@
+                <label>CONFIRM PASSWORD</label>
+                <br />
+            </div>
+            <button type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                SignUp
+            </button>
+        }
+        <div>
+            <h4 class="text">Already have an account? &nbsp; <a href="/User/SignIn">Login</a></h4>
+        </div>
+    </div>
+</body>
+</html>

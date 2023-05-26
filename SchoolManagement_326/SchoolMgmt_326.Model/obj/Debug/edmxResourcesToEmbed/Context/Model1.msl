@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Pooja_SchoolMgmt_326ModelStoreContainer" CdmEntityContainer="Pooja_SchoolMgmt_326Entities2">
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="Pooja_SchoolMgmt_326Model.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CiId" ColumnName="CiId" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CoId" ColumnName="CoId" />
+          <ScalarProperty Name="StId" ColumnName="StId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="Pooja_SchoolMgmt_326Model.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CoId" ColumnName="CoId" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="Pooja_SchoolMgmt_326Model.State">
+        <MappingFragment StoreEntitySet="States">
+          <ScalarProperty Name="StId" ColumnName="StId" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CoId" ColumnName="CoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="Pooja_SchoolMgmt_326Model.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="SId" ColumnName="SId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subjects">
+      <EntityTypeMapping TypeName="Pooja_SchoolMgmt_326Model.Subject">
+        <MappingFragment StoreEntitySet="Subjects">
+          <ScalarProperty Name="SubId" ColumnName="SubId" />
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teachers">
+      <EntityTypeMapping TypeName="Pooja_SchoolMgmt_326Model.Teacher">
+        <MappingFragment StoreEntitySet="Teachers">
+          <ScalarProperty Name="TecId" ColumnName="TecId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Pooja_SchoolMgmt_326Model.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_AddEditCities" FunctionName="Pooja_SchoolMgmt_326Model.Store.sp_AddEditCities" />
+    <FunctionImportMapping FunctionImportName="sp_AddEditCountry" FunctionName="Pooja_SchoolMgmt_326Model.Store.sp_AddEditCountry" />
+    <FunctionImportMapping FunctionImportName="sp_AddEditState" FunctionName="Pooja_SchoolMgmt_326Model.Store.sp_AddEditState" />
+    <FunctionImportMapping FunctionImportName="sp_AddEditStudent" FunctionName="Pooja_SchoolMgmt_326Model.Store.sp_AddEditStudent" />
+    <FunctionImportMapping FunctionImportName="sp_AddEditSubject" FunctionName="Pooja_SchoolMgmt_326Model.Store.sp_AddEditSubject" />
+    <FunctionImportMapping FunctionImportName="SP_GetStudentDetails1" FunctionName="Pooja_SchoolMgmt_326Model.Store.SP_GetStudentDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Pooja_SchoolMgmt_326Model.SP_GetStudentDetails1_Result">
+          <ScalarProperty Name="SID" ColumnName="SID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Full_Name" ColumnName="Full Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Teachers" ColumnName="Teachers" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetTeacherDetails1" FunctionName="Pooja_SchoolMgmt_326Model.Store.SP_GetTeacherDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Pooja_SchoolMgmt_326Model.SP_GetTeacherDetails1_Result">
+          <ScalarProperty Name="TecID" ColumnName="TecID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Full_Name" ColumnName="Full Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Subjects" ColumnName="Subjects" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

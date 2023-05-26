@@ -1,0 +1,150 @@
+﻿@model SchoolMgmt_326.Model.Model.TeacherModel
+
+@{
+    ViewBag.Title = "AddTeacher";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="~/Content/common/Style1.css" />
+    <script defer src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script defer src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <form action="/Teachers/AddTeacher" method="post">
+            <h1><lable>ADD TEACHER</lable> </h1>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="row">
+                <div class="col-lg-6 inset">
+                    <p>
+                        <label for="fname">FIRST NAME</label>
+                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                    </p>
+                </div>
+
+
+                <div class="col-lg-6 inset">
+                    <p>
+                        <label for="lname">LAST NAME</label>
+                        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 inset">
+                    <p>
+                        <label for="address">ADDRESS</label>
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                    </p>
+                </div>
+               
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 inset">
+                    <p>
+                        <label for="mobile">MOBILE NO.</label>
+                        @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+                    </p>
+                </div>
+
+
+                <div class="col-lg-6 inset">
+                    <p>
+                        <label for="email">EMAIL</label>
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </p>
+                </div>
+                </div>
+
+            <div class="row">
+                <div class="col-lg-6 inset">
+                    <p>
+                        <label for="gender">GENDER</label>
+                        <div class="form-check-inline form-check">
+                            @Html.RadioButton("Gender", "Male", false, new { id = "male", @class = "form-check-input" })
+                            @Html.Label("Male", "Male", new { @for = "male", @class = "form-check-label " })
+                            &nbsp; &nbsp;
+                            @Html.RadioButton("Gender", "Female", false, new { id = "female", @class = "form-check-input" })
+                            @Html.Label("Female", "Female", new { @for = "female", @class = "form-check-label " })
+                            &nbsp; &nbsp;
+                            @Html.RadioButton("Gender", "Other", false, new { id = "other", @class = "form-check-input" })
+                            @Html.Label("Other", "Other", new { @for = "other", @class = "form-check-label " })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                    </p>
+                </div>
+                <div class="col-lg-6 inset">
+                    <p>
+                        <label for="subject">SUBJECT</label>
+                        @if (ViewBag.SubList != null)
+                        {
+                            @Html.DropDownListFor(m => m.SubjectId, new SelectList(ViewBag.SubList, "SubId", "SubjectName"), "--Select Subjects--", new { @class = "form-control", @multiple = "multiple" })
+                            @Html.ValidationMessageFor(modal => modal.SubjectId, "", new { @class = "text-danger" })
+                        }
+                    </p>
+                </div>
+            </div>
+
+
+                <div class="row">
+                    <div class="col-lg-4 inset">
+                        <p>
+                            <label for="Country">COUNTRY</label>
+                            @if (ViewBag.CoList != null)
+                            {
+                                @Html.DropDownListFor(m => m.CountryId, new SelectList(ViewBag.CoList, "CoId", "CountryName"), "--Select Country--", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(modal => modal.CountryId, "", new { @class = "text-danger" })
+                            }
+                        </p>
+                    </div>
+
+
+                    <div class="col-lg-4 inset">
+                        <p>
+                            <label for="State">STATE</label>
+                            @Html.DropDownListFor(m => m.StateId, new SelectList(""), "--Select State--", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(modal => modal.StateId, "", new { @class = "text-danger" })
+                        </p>
+                    </div>
+
+                    <div class="col-lg-4 inset">
+                        <p>
+                            <label for="City">CITY</label>
+                            @Html.DropDownListFor(m => m.CityId, new SelectList(""), "--Select City--", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(modal => modal.CityId, "", new { @class = "text-danger" })
+                        </p>
+                    </div>
+                </div>
+                <p class="p-container">
+                    <input type="submit" class="form-submit" value="Submit" />
+                </p>
+</form>
+        <br /><br />
+              <h3>@Html.ActionLink("Back To List", "GetTeachers")</h3>
+    </div>
+
+    <script src="~/Content/common/Form.js"></script>
+    <script>
+        $(document).ready(function () {
+        $("#SubjectId").select2({
+            placeholder: "Select Subjects",
+            multiple: true
+        });
+        })
+    </script>
+</body>
+</html>

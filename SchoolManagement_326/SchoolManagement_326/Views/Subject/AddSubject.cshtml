@@ -1,0 +1,37 @@
+﻿@model SchoolMgmt_326.Model.Model.SubjectModel
+
+@{
+    ViewBag.Title = "AddSubject";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="~/Content/common/Style1.css" />
+</head>
+
+<body>
+    <div class="main">
+        <form action="/Subject/AddSubject" method="post">
+            <h1><lable>ADD SUBJECTS</lable> </h1>
+            <div class="inset">
+                <p>
+                    <label for="Subject">SUBJECT NAME</label>
+                    @Html.EditorFor(model => model.SubjectName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SubjectName, "", new { @class = "text-danger" })
+                </p>
+            </div>
+            <p class="p-container">
+                <input type="submit" class="form-submit" value="Submit" />
+            </p>
+        </form>
+        <br /><br />
+        @Html.ActionLink("Back To List", "GetSubjects", "Subject")
+    </div>
+</body>
+</html>
+
+

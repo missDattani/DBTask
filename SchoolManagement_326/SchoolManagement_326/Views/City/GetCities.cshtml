@@ -1,0 +1,91 @@
+﻿@model IEnumerable<SchoolMgmt_326.Model.Context.City>
+
+@{
+    ViewBag.Title = "GetCities";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+
+<link href="~/Content/common/Style1.css" rel="stylesheet" />
+<div class="content-wrapper">
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            @TempData["Error"]
+        </div>
+    }
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">City Details</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Cities</a></li>
+                        <li class="breadcrumb-item active">City Details</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 m-t-25">
+
+                    <div class=" table-responsive">
+                        <table class="table table-borderless table-striped table-earning" id="CiTable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        City Name
+                                    </th>
+                                    <th>
+                                        State Name
+                                    </th>
+                                    <th>
+                                        Country Name
+                                    </th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.CityName
+                                        </td>
+                                        <td>
+                                            @item.StId
+                                        </td>
+                                        <td>
+                                            @item.CoId
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "UpdateCity", new { CiId = item.CiId }) |
+                                            @Html.ActionLink("Details", "GetCityDetails", new { CiId = item.CiId }) |
+                                            @Html.ActionLink("Delete", "DeleteCity", new { CiId = item.CiId })
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+    let table = new DataTable('#CiTable');
+</script>
+
+
+
+
+
+

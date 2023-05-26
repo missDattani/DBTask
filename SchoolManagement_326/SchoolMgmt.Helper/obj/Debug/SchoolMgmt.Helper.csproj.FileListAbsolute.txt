@@ -1,0 +1,15 @@
+C:\Users\sit307\Desktop\data\PoojaDattani\New folder\School\SchoolManagement_326\SchoolMgmt.Helper\bin\Debug\SchoolMgmt.Helper.dll
+C:\Users\sit307\Desktop\data\PoojaDattani\New folder\School\SchoolManagement_326\SchoolMgmt.Helper\bin\Debug\SchoolMgmt.Helper.pdb
+C:\Users\sit307\Desktop\data\PoojaDattani\New folder\School\SchoolManagement_326\SchoolMgmt.Helper\obj\Debug\SchoolMgmt.Helper.csproj.AssemblyReference.cache
+C:\Users\sit307\Desktop\data\PoojaDattani\New folder\School\SchoolManagement_326\SchoolMgmt.Helper\obj\Debug\SchoolMgmt.Helper.csproj.CoreCompileInputs.cache
+C:\Users\sit307\Desktop\data\PoojaDattani\New folder\School\SchoolManagement_326\SchoolMgmt.Helper\obj\Debug\SchoolMgmt.Helper.dll
+C:\Users\sit307\Desktop\data\PoojaDattani\New folder\School\SchoolManagement_326\SchoolMgmt.Helper\obj\Debug\SchoolMgmt.Helper.pdb
+C:\Users\sit307\Desktop\data\PoojaDattani\New folder\School\SchoolManagement_326\SchoolMgmt.Helper\bin\Debug\SchoolMgmt.Helper.dll.config
+C:\Users\sit307\Desktop\data\PoojaDattani\New folder\School\SchoolManagement_326\SchoolMgmt.Helper\bin\Debug\EntityFramework.dll
+C:\Users\sit307\Desktop\data\PoojaDattani\New folder\School\SchoolManagement_326\SchoolMgmt.Helper\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sit307\Desktop\data\PoojaDattani\New folder\School\SchoolManagement_326\SchoolMgmt.Helper\bin\Debug\SchoolMgmt_326.Model.dll
+C:\Users\sit307\Desktop\data\PoojaDattani\New folder\School\SchoolManagement_326\SchoolMgmt.Helper\bin\Debug\SchoolMgmt_326.Model.pdb
+C:\Users\sit307\Desktop\data\PoojaDattani\New folder\School\SchoolManagement_326\SchoolMgmt.Helper\bin\Debug\SchoolMgmt_326.Model.dll.config
+C:\Users\sit307\Desktop\data\PoojaDattani\New folder\School\SchoolManagement_326\SchoolMgmt.Helper\bin\Debug\EntityFramework.xml
+C:\Users\sit307\Desktop\data\PoojaDattani\New folder\School\SchoolManagement_326\SchoolMgmt.Helper\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sit307\Desktop\data\PoojaDattani\New folder\School\SchoolManagement_326\SchoolMgmt.Helper\obj\Debug\SchoolMgmt.Helper.csproj.CopyComplete

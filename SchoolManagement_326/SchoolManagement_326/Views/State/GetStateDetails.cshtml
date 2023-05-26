@@ -1,0 +1,40 @@
+﻿@model SchoolMgmt_326.Model.Model.StateModel
+
+@{
+    ViewBag.Title = "GetStateDetails";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+
+<div class="container">
+    <h2>GetStateDetails</h2>
+
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.StateName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StateName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CoId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CoId)
+            </dd>
+
+           
+
+        </dl>
+    </div>
+    <p>
+
+        @Html.ActionLink("Back to List", "GetStates")
+    </p>
+</div>

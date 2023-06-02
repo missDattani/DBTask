@@ -1,0 +1,35 @@
+﻿@model List<SchoolManagement_SIT326.Context.Sp_GetCountries_Result>
+@{
+    ViewBag.Title = "GetCountries";
+}
+
+<style>
+    .mt-5{
+        margin-top:50px;
+    }
+</style>
+
+<div class="container mt-5">
+    <h3 class="text-danger">@TempData["Error"]</h3>
+    <p>
+       <a href="/Country/AddEditCountry" class="btn btn-primary">Create New</a>
+    </p>
+
+
+    <table class="table">
+        <tr>
+            <th>CountryName</th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>@item.CountryName</td>
+        <td><a class="btn btn-warning" href="/Country/AddEditCountry?CoId+@item.CountryId">Edit</a>
+        <a class="btn btn-danger" href="/Country/RemoveCountry?CoId+@item.CountryId">Delete</a></td>
+    </tr>
+        }
+
+    </table>
+</div>

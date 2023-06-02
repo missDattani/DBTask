@@ -1,0 +1,51 @@
+﻿@model SchoolManagement_SIT326.Models.CountryModel
+@{
+    ViewBag.Title = "AddEditCountry";
+}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Content/Theme/css/Style1.css" rel="stylesheet" />
+    <style>
+        .mt-5 {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+  
+    <div class="main">
+        <div class="container">
+            @if (TempData["Error"] != null)
+            {
+                <h2 class="text-danger">@TempData["Error"]</h2>
+
+            }
+        </div>
+        <div class="mt-5">
+            @using (Html.BeginForm())
+            {
+                <h1><lable>Country Details</lable> </h1>
+                <div class="inset">
+                    <p>
+                        <label for="CountryName">COUNTRY NAME</label>
+                        @Html.EditorFor(m => m.CountryName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CountryName, "", new { @class = "text-danger" })
+                    </p>
+
+                    <p class="p-container">
+                        <input type="submit" value="Submit">
+                    </p>
+                </div>
+            }
+        </div>
+        <div class="mt-5">
+            @Html.ActionLink("Back To List","GetCountries")
+        </div>
+    </div>
+</body>
+</html>
+

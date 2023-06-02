@@ -1,0 +1,6 @@
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Models\bin\Debug\SchoolManagement_SIT326.Models.dll
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Models\bin\Debug\SchoolManagement_SIT326.Models.pdb
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Models\obj\Debug\SchoolManagement_SIT326.Models.csproj.AssemblyReference.cache
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Models\obj\Debug\SchoolManagement_SIT326.Models.csproj.CoreCompileInputs.cache
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Models\obj\Debug\SchoolManagement_SIT326.Models.dll
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Models\obj\Debug\SchoolManagement_SIT326.Models.pdb

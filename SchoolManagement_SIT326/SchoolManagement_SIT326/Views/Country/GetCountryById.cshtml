@@ -1,0 +1,25 @@
+﻿@model SchoolManagement_SIT326.Models.Models.CountryModel
+@{
+    ViewBag.Title = "GetCountryById";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    table {
+        margin-top: 50px;
+    }
+</style>
+@if(TempData["Country"] != null)
+            {
+                <div class="alert alert-danger">@TempData["Country"]</div>
+            }
+
+<h2>GetCountryById</h2>
+<table class="table">
+    <tr>
+        <th>CountryName</th>
+    </tr>
+    <tr>
+        <td>@Model.CountryName</td>
+    </tr>
+</table>
+

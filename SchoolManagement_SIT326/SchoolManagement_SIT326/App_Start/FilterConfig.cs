@@ -10,4 +10,16 @@ namespace SchoolManagement_SIT326
             filters.Add(new HandleErrorAttribute());
         }
     }
+
+    public class LoginAction : ActionFilterAttribute
+    {
+        public override void OnActionExecuted(ActionExecutedContext filterContext)
+        {
+            if (HttpContext.Current.Session["Fullname"] == null)
+            {
+                filterContext.Result = new RedirectResult("~/User/SignIn");
+            }
+        }
+    }
+
 }

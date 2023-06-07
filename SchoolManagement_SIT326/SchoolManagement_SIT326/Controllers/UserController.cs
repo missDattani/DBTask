@@ -1,29 +1,132 @@
-﻿using SchoolManagement_SIT326.Context;
-using SchoolManagement_SIT326.Models;
+﻿using SchoolManagement_SIT326.Helpers.Helpers;
+using SchoolManagement_SIT326.Models.Context;
+using SchoolManagement_SIT326.Models.Models;
+using SchoolManagement_SIT326.Repositories.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace SchoolManagement_SIT326.Controllers
 {
     public class UserController : Controller
     {
-        OrderManagementEntities1 entities = new OrderManagementEntities1();
-        // GET: User
+        private readonly IUserInterface uInterface;
 
-        public ActionResult Index()
+     
+
+        public UserController(IUserInterface uInterface)
+        {
+            this.uInterface = uInterface;
+        }
+        [LoginAction]
+        public ActionResult GetUsers()
         {
             try
             {
-                return View(entities.Users.ToList());
+                List<UserModel> uModel = uInterface.GetUsers();
+                return View(uModel);
             }
             catch (Exception e)
             {
 
                 throw e;
             }
+        }
+        [LoginAction]
+        public ActionResult GetUserById(int Id)
+        {
+            try
+            {
+                Users us = uInterface.DisplayUserById(Id);
+                UserModel UModel = UserHelper.BindUserToUserModel(us);
+
+                if (UModel != null)
+                {
+                    return View(UModel);
+                }
+                else
+                {
+                    TempData["User"] = "User Not Found";
+                    return View();
+                }
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+ 
+        public ActionResult SignUp(int? Id)
+        {
+            try
+            {
+                if (Id == null)
+                {
+                    return View();
+                }
+                else
+                {
+                    Users us = uInterface.DisplayUserById(Id);
+                    UserModel UModel = UserHelper.BindUserToUserModel(us);
+                    return View(UModel);
+                }
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+           
+        }
+
+        [HttpPost]
+        public ActionResult SignUp(UserModel uModel,int? Id)
+        {
+            try
+            {
+                
+                    if (Id == null)
+                    {
+                        int user = uInterface.SignUp(uModel, 0);
+                        if (user == 1)
+                        {
+                            TempData["Success"] = "User Added Successfully";
+                            return RedirectToAction("SignIn");
+                        }
+                        else
+                        {
+                            TempData["Error"] = user;
+                            return View();
+                        }
+
+                    }
+                    else
+                    {
+                        int userE = uInterface.SignUp(uModel, Id);
+                        if (userE == 1)
+                        {
+                            TempData["Success"] = "User Edited Successfully";
+                            return RedirectToAction("SignIn");
+                        }
+                        else
+                        {
+                            TempData["Error"] = userE;
+                            return View();
+                        }
+                    }
+                
+               
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
         }
 
         public ActionResult SignIn()
@@ -31,116 +134,60 @@ namespace SchoolManagement_SIT326.Controllers
             return View();
         }
 
-
-            [HttpPost]
-
-            public ActionResult SignIn(UserModel uModel)
-            {
-            try
-            {
-                if (string.IsNullOrEmpty(uModel.Email) || string.IsNullOrEmpty(uModel.PassWord))
-                { 
-                    TempData["Error"] = "Please enter both email and password.";
-                    return View();
-                }
-                var user = entities.Users.FirstOrDefault(m => m.Email == uModel.Email);
-                if (user != null)
-                {
-                    if (user.PassWord == uModel.PassWord)
-
-                    {
-                        TempData["Success"] = "Login Successfull";
-                        return RedirectToAction("Index");
-                    }
-                    else
-                    {
-                        TempData["Error"] = "Invalid Password.";
-                        return View();
-                    }
-                }
-                else
-                {
-                    TempData["Error"] = "Invalid Email.";
-                    return View();
-                }
-
-            }
-            catch (Exception ex)
-
-            {
-                TempData["Error"] = "An error occurred.";
-                throw ex;
-            }
-        }
-
-        public ActionResult SignUp()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public ActionResult SignUp(UserModel userM)
+        public ActionResult SignIn(UserModel userM)
         {
             try
             {
-                var checkUser = entities.Users.Any(m => m.FirstName == userM.FirstName && m.LastName == userM.LastName);
-                if(checkUser)
+                string user = uInterface.SignIn(userM);
+                if (user == "Invalid Email" || user == "Invalid Password")
                 {
-                    TempData["Error"] = "User Already exists";
+                    TempData["Error"] = user;
                     return View();
+               
                 }
                 else
                 {
-                    if (ModelState.IsValid)
-                    {
-                        User u = new User();
-                        u = BindUserModelToUser(userM);
-                        entities.Users.Add(u);
-                        entities.SaveChanges();
-                        TempData["Success"] = "User Added Successfully";
-                        return RedirectToAction("SignIn");
-                    }
-                    else
-                    {
-                        return View();
-                    }
-                  
+                    Session["FullName"] = user;
+                    TempData["Success"] = "Login Successfull";
+                    FormsAuthentication.SetAuthCookie(userM.Email, false);
+                    return RedirectToAction("GetUsers");
                 }
-             
             }
             catch (Exception e)
             {
 
                 throw e;
             }
+        }
+        
+        public ActionResult DeleteUser(int Id)
+        {
+            try
+            {
+                int res = uInterface.RemoveUser(Id);
+                if (res == 1)
+                {
+                    TempData["Success"] = "User Deleted Successfully";
+                    return RedirectToAction("GetUsers");
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            catch (Exception e)
+            {
 
+                throw e;
+            }
         }
 
-        public static User BindUserModelToUser(UserModel user)
+        public ActionResult Logout()
         {
-            User users = new User();
-
-            users.Id = user.Id;
-            users.FirstName = user.FirstName;
-            users.LastName = user.LastName;
-            users.Email = user.Email;
-            users.PassWord = user.PassWord;
-            users.Role = user.Role;
-           
-            return users;
-        }
-
-        public static UserModel BindUserToUserModel(User u)
-        {
-            UserModel user = new UserModel();
-            user.Id = u.Id;
-            user.FirstName = u.FirstName;
-            user.LastName = u.LastName;
-            user.Email = u.Email;
-            user.PassWord = u.PassWord;
-            user.Role = u.Role;
-            user.RoleName = u.Role == 1 ? "Super Admin" : u.Role == 2 ? "Admin" : "Student";
-            return user;
+            Session.Abandon();
+            FormsAuthentication.SignOut();
+            return RedirectToAction("SignIn");
         }
     }
 }

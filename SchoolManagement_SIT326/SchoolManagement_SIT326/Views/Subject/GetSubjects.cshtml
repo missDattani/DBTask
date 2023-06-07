@@ -1,0 +1,36 @@
+﻿@model IEnumerable<SchoolManagement_SIT326.Models.Models.SubjectModel>
+@{
+    ViewBag.Title = "GetSubjects";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetSubjects</h2>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+<p>
+    @Html.ActionLink("Create New", "AddSubject")
+</p>
+<table class="table">
+    <tr>
+        <th>SubjectName</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SubjectName</td>
+            <td>
+                <a href="/Subject/AddSubject?SubId=@item.SubId" class="btn btn-success">Edit</a> |
+                <a href="/Subject/GetSubjectById?SubId=@item.SubId" class="btn btn-info">Details</a> |
+                <a href="/Subject/DeleteSubject?SubId=@item.SubId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+
+</table>

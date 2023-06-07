@@ -1,58 +1,59 @@
-﻿@model SchoolManagement_SIT326.Models.UserModel
+﻿@model SchoolManagement_SIT326.Models.Models.UserModel
 
 @{
     ViewBag.Title = "SignIn";
     Layout = null;
 }
-<link defer href="~/Content/Theme/css/Style.css" rel="stylesheet" />
-<div class="wrapper">
 
-    <div class="title-text">
-        <div class="title signup">Signup Form</div>
-    </div>
-    <h3 class="text-success">@TempData["Success"]</h3>
-    @if (TempData["Error"] != null)
-    {
-        <h3 class="text-danger error">@TempData["Error"]</h3>
-    }
-    <div class="form-inner">
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
+<h2>SignIn</h2>
+@if (TempData["Error"] != null)
+{
+    <div class="alert-danger">@TempData["Error"]</div>
+}
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
 
-            <div class="form-horizontal">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-horizontal">
+        <h4>UserModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                <div class="field">
-                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
 
-                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger error2" })
-
-                </div><br />
-
-                <div class="field">
-                    @Html.LabelFor(model => model.PassWord, htmlAttributes: new { @class = "control-label" })
-
-                    @Html.EditorFor(model => model.PassWord, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.PassWord, "", new { @class = "text-danger error2" })
-
-                </div><br />
-
-                <div class="field btn">
-                    <div class="btn-layer"></div>
-                    <input type="submit" value="Signin">
-                </div>
-                <br />
-                <div>
-                    Don't Have anaccount? @Html.ActionLink("Signup Here", "SignUp", "User")
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
             </div>
-        }
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PassWord, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PassWord, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PassWord, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
     </div>
+}
+
+<div>
+    <h3>Don't Have An Account?@Html.ActionLink("SignUp Here", "SignUp")</h3>
 </div>
 
-
-<script src="~/Content/Theme/js/Script.js"></script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

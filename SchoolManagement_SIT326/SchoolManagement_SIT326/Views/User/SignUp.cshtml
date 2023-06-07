@@ -1,94 +1,86 @@
-﻿@model SchoolManagement_SIT326.Models.UserModel
-
+﻿@model SchoolManagement_SIT326.Models.Models.UserModel
+@using SchoolManagement_SIT326.Helpers.GlobalEnum
 @{
     ViewBag.Title = "SignUp";
     Layout = null;
 }
-<link defer href="~/Content/Theme/css/Style.css" rel="stylesheet" />
-<div class="wrapper">
-    <div class="title-text">
-        <div class="title signup">Signup Form</div>
-    </div>
-    @if (TempData["Error"] != null)
-    {
-        <h3 class="error">@TempData["Error"]</h3>
-    }
-    <div class="form-inner">
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
+@Styles.Render("~/Content/css")
+<h2>SignUp</h2>
+@if (TempData["Error"] != null) {
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
 
-        <div class="form-horizontal">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="field">
-                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger error2" })
-
-            </div><br />
-
-            <div class="field">
-                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label" })
-
-                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger error2" })
-
-            </div><br />
-
-            <div class="field">
-                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
-
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger error2" })
-
-            </div><br />
-
-            <div class="field">
-                @Html.LabelFor(model => model.PassWord, htmlAttributes: new { @class = "control-label" })
-
-                @Html.EditorFor(model => model.PassWord, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PassWord, "", new { @class = "text-danger error2" })
-
-            </div><br />
-
-            <div class="field">
-                @Html.LabelFor(model => model.ConfirmPassWord, htmlAttributes: new { @class = "control-label" })
-
-                @Html.EditorFor(model => model.ConfirmPassWord, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ConfirmPassWord, "", new { @class = "text-danger error2" })
-
-            </div><br />
-
-
-
-            <div class="field">
-                @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label" })
-
-                @Html.DropDownListFor(model => model.Role, new List<SelectListItem>
-                {
-               new SelectListItem{Text="Super Admin", Value="1"},
-               new SelectListItem{Text="Admin", Value="2"},
-               new SelectListItem{Text="Student", Value="3"}
-
-               }, "--Select Role--", new { @class = "form-control" })<br />
-                @Html.ValidationMessageFor(model => model.RoleName, "", new { @class = "text-danger error2" })
-
-            </div><br />
-
-            <div class="field btn">
-                <div class="btn-layer"></div>
-                <input type="submit" value="Signup">
-            </div>
-            <br />
-            <div>
-                Already a member? @Html.ActionLink("Login Here", "SignIn","User")
-            </div>
+<div class="form-horizontal">
+    <h4>UserModel</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(m => m.Id)
+    <div class="form-group">
+        @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
         </div>
-        }
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PassWord, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.PassWord, new { @class = "form-control", @type="password" } )
+            @Html.ValidationMessageFor(model => model.PassWord, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Role, EnumHelper.GetSelectList(typeof(UserRoleType)), "--Select Role--", new { @class = "form-control" } )
+            @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
     </div>
 </div>
-    
-       
-<script src="~/Content/Theme/js/Script.js"></script>
+}
+
+<div>
+    <h3>Already Member?@Html.ActionLink("Login Here", "SignIn")</h3>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+}

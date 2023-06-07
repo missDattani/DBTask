@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SchoolManagement_SIT326.Models.Models.CityModel>
+@{
+    ViewBag.Title = "GetCities";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetCities</h2>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+<p>
+    @Html.ActionLink("Create New", "AddCity")
+</p>
+<table class="table">
+    <tr>
+        <th>CityName</th>
+        <th>StateName</th>
+        <th>CountryName</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CityName</td>
+            <td>@item.StateName</td>
+            <td>@item.CountryName</td>
+            <td>
+                <a href="/City/AddCity?CtId=@item.CityId" class="btn btn-success">Edit</a> | 
+                <a href="/City/GetCityById?CtId=@item.CityId" class="btn btn-info">Details</a> |
+                <a href="/City/DeleteCity?CtId=@item.CityId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

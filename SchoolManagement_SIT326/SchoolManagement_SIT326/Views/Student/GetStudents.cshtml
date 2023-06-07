@@ -1,0 +1,88 @@
+﻿@model IEnumerable<SchoolManagement_SIT326.Models.Models.StudentModel>
+
+@{
+    ViewBag.Title = "GetStudents";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetStudents</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddStudent")
+</p>
+<table class="table">
+    <tr>
+        <th>
+          FirstName
+        </th>
+        <th>
+          LastName
+        </th>
+        <th>
+         Gender
+        </th>
+        <th>
+          Address
+        </th>
+        <th>
+            MobileNo
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+           SubjectId
+        </th>
+        <th>
+          CountryName
+        </th>
+        <th>
+        StateName
+        </th>
+        <th>
+            CityName
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.FirstName
+        </td>
+        <td>
+            @item.LastName
+        </td>
+        <td>
+            @item.Gender
+        </td>
+        <td>
+            @item.Address
+        </td>
+        <td>
+            @item.MobileNo
+        </td>
+        <td>
+            @item.Email
+        </td>
+        <td>
+            @item.SubjectId
+        </td>
+        <td>
+            @item.CountryName
+        </td>
+        <td>
+            @item.StateName
+        </td>
+        <td>
+            @item.CityName
+        </td>
+        <td>
+            <a href="/Student/AddStudent?StuId=@item.StuId" class="btn btn-success">Edit</a> |
+            <a href="/Student/GetStudentById?StuId=@item.StuId" class="btn btn-info">Details</a> |
+            <a href="/Student/DeleteStudent?StuId=@item.StuId" class="btn btn-danger">Delete</a>
+        </td>
+    </tr>
+}
+
+</table>

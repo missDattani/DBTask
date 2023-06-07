@@ -1,0 +1,17 @@
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\bin\Debug\SchoolManagement_SIT326.Repositories.dll.config
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\bin\Debug\SchoolManagement_SIT326.Repositories.dll
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\bin\Debug\SchoolManagement_SIT326.Repositories.pdb
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\bin\Debug\EntityFramework.dll
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\bin\Debug\SchoolManagement_SIT326.Helpers.dll
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\bin\Debug\SchoolManagement_SIT326.Models.dll
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\bin\Debug\SchoolManagement_SIT326.Helpers.pdb
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\bin\Debug\SchoolManagement_SIT326.Models.pdb
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\bin\Debug\SchoolManagement_SIT326.Models.dll.config
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\bin\Debug\EntityFramework.xml
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\obj\Debug\SchoolManagement_SIT326.Repositories.csproj.AssemblyReference.cache
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\obj\Debug\SchoolManagement_SIT326.Repositories.csproj.CoreCompileInputs.cache
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\obj\Debug\SchoolManagement_SIT326.Repositories.csproj.CopyComplete
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\obj\Debug\SchoolManagement_SIT326.Repositories.dll
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Repositories\obj\Debug\SchoolManagement_SIT326.Repositories.pdb

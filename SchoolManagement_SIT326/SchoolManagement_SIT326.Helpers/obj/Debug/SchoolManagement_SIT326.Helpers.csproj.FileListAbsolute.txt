@@ -1,6 +1,12 @@
 C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Helpers\bin\Debug\SchoolManagement_SIT326.Helpers.dll
 C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Helpers\bin\Debug\SchoolManagement_SIT326.Helpers.pdb
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Helpers\bin\Debug\SchoolManagement_SIT326.Models.dll
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Helpers\bin\Debug\EntityFramework.dll
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Helpers\bin\Debug\SchoolManagement_SIT326.Models.pdb
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Helpers\bin\Debug\SchoolManagement_SIT326.Models.dll.config
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Helpers\bin\Debug\EntityFramework.xml
 C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Helpers\obj\Debug\SchoolManagement_SIT326.Helpers.csproj.AssemblyReference.cache
 C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Helpers\obj\Debug\SchoolManagement_SIT326.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Helpers\obj\Debug\SchoolManagement_SIT326.Helpers.csproj.CopyComplete
 C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Helpers\obj\Debug\SchoolManagement_SIT326.Helpers.dll
 C:\Users\sit307\source\repos\SchoolManagement_SIT326\SchoolManagement_SIT326.Helpers\obj\Debug\SchoolManagement_SIT326.Helpers.pdb

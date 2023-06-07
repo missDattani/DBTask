@@ -1,35 +1,37 @@
-﻿@model List<SchoolManagement_SIT326.Context.Sp_GetCountries_Result>
+﻿@model IEnumerable<SchoolManagement_SIT326.Models.Models.CountryModel>
 @{
     ViewBag.Title = "GetCountries";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style>
-    .mt-5{
-        margin-top:50px;
-    }
-</style>
-
-<div class="container mt-5">
-    <h3 class="text-danger">@TempData["Error"]</h3>
-    <p>
-       <a href="/Country/AddEditCountry" class="btn btn-primary">Create New</a>
-    </p>
-
-
-    <table class="table">
-        <tr>
-            <th>CountryName</th>
-            <th>Action</th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
+<h2>GetCountries</h2>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+<p>
+    @Html.ActionLink("Create New","AddCountry")
+</p>
+<table class="table">
     <tr>
-        <td>@item.CountryName</td>
-        <td><a class="btn btn-warning" href="/Country/AddEditCountry?CoId+@item.CountryId">Edit</a>
-        <a class="btn btn-danger" href="/Country/RemoveCountry?CoId+@item.CountryId">Delete</a></td>
+        <th>CountryName</th>
+        <th>Action</th>
     </tr>
-        }
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.CountryName</td>
+    <td>
+        <a href="/Country/AddCountry?CoId=@item.CountryId" class="btn btn-success">Edit</a> |
+        <a href="/Country/GetCountryById?CoId=@item.CountryId" class="btn btn-info">Details</a> |
+        <a href="/Country/DeleteCountry?CoId=@item.CountryId" class="btn btn-danger">Delete</a>
+    </td>
+</tr>
+    }
 
-    </table>
-</div>
+</table>
+

@@ -1,0 +1,42 @@
+﻿@model SchoolManagement_SIT326.Models.Models.TeacherModel
+@{
+    ViewBag.Title = "GetTeacherById";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetTeacherById</h2>
+@if(TempData["Teacher"] != null)
+            {
+                <div class="alert alert-danger">@TempData["Teacher"]</div>
+            }
+
+<table class="table">
+    <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>MobileNo</th>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Country</th>
+        <th>State</th>
+        <th>City</th>
+    </tr>
+    <tr>
+        <td>@Model.FirstName</td>
+        <td>@Model.LastName</td>
+        <td>@Model.GenderName</td>
+        <td>@Model.Address</td>
+        <td>@Model.MobileNo</td>
+        <td>@Model.Email</td>
+        <td>@Model.SubjectId</td>
+        <td>@Model.CountryName</td>
+        <td>@Model.StateName</td>
+        <td>@Model.CityName</td>
+    </tr>
+</table>
+
+<div>
+    @Html.ActionLink("Back To List","GetTeachers")
+</div>

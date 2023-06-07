@@ -1,5 +1,7 @@
-﻿using SchoolManagement_SIT326.Context;
-using SchoolManagement_SIT326.Models;
+﻿using SchoolManagement_SIT326.Helpers.Helpers;
+using SchoolManagement_SIT326.Models.Context;
+using SchoolManagement_SIT326.Models.Models;
+using SchoolManagement_SIT326.Repositories.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,47 +10,22 @@ using System.Web.Mvc;
 
 namespace SchoolManagement_SIT326.Controllers
 {
+    [LoginAction]
     public class CountryController : Controller
     {
-        OrderManagementEntities1 entities = new OrderManagementEntities1();
+       private readonly ICountryInterface coInterface;
+
+        public CountryController(ICountryInterface coInterface)
+        {
+            this.coInterface = coInterface;
+        }
         // GET: Country
         public ActionResult GetCountries()
         {
-            List<Sp_GetCountries_Result> countries = entities.Sp_GetCountries().ToList();
-            return View(countries);
-        }
-
-        public ActionResult AddEditCountry()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult AddEditCountry(CountryModel countryM)
-        {
             try
             {
-                var checkCo = entities.Countries.Any(m => m.CountryName == countryM.CountryName);
-                if (checkCo)
-                {
-                    TempData["Error"] = "Country Already exists";
-                    return View();
-                }
-                else
-                {
-                    if (ModelState.IsValid)
-                    {
-                        Country country = new Country();
-                        country = BindCountryModelToCountry(countryM);
-                        entities.Countries.Add(country);
-                        entities.SaveChanges();
-                        return RedirectToAction("GetCountries");
-                    }
-                    else
-                    {
-                        return View();
-                    }
-                }
+                List<CountryModel> coModel = coInterface.DisplayCountries();
+                return View(coModel);
             }
             catch (Exception e)
             {
@@ -57,37 +34,110 @@ namespace SchoolManagement_SIT326.Controllers
             }
         }
 
-        public ActionResult RemoveCountry(int CoId)
+        public ActionResult GetCountryById(int CoId)
+        {
+            Country co = coInterface.DisplayCountryById(CoId);
+            CountryModel coModel = CountryHelper.BindCountryToCountryModel(co);
+            if (coModel != null)
+            {
+                return View(coModel);
+            }
+            else
+            {
+                TempData["Country"] = "Country Not Found";
+                return View();
+            }
+        }
+
+        public ActionResult AddCountry(int? CoId)
         {
             try
             {
-                var res = entities.Countries.Where(m => m.CountryId == CoId).FirstOrDefault();
-                bool Check = (entities.States.Any(m => m.CountryId == CoId) && entities.Cities.Any(m => m.CountryId == CoId));
-                if (Check)
+                if (CoId == 0)
                 {
-                    TempData["Error"] = "Country Is In Use";
-                    return RedirectToAction("GetCountries");
+                    return View();
                 }
                 else
                 {
-                    entities.Countries.Remove(res);
-                    entities.SaveChanges();
-                    return RedirectToAction("GetCountries");
+                    Country country = coInterface.DisplayCountryById(CoId);
+                    CountryModel coModel = CountryHelper.BindCountryToCountryModel(country);
+                    return View(coModel);
                 }
             }
             catch (Exception e)
             {
-                TempData["Error"] = "Country Is In Use";
-                return RedirectToAction("GetCountries");
+
+                throw e;
+            }
+           
+        }
+
+        [HttpPost]
+        public ActionResult AddCountry(CountryModel countryM,int? CoId)
+        {
+            try
+            {
+              
+                    if (CoId == null)
+                    {
+                        int co = coInterface.InsCountries(countryM, 0);
+                        if (co == 1)
+                        {
+                            TempData["Success"] = "Country Added Successfully";
+                            return RedirectToAction("GetCountries");
+                        }
+                        else
+                        {
+                            TempData["Error"] = "Country Already Exists";
+                            return View();
+                        }
+
+                    }
+                    else
+                    {
+                       int coE = coInterface.InsCountries(countryM, CoId);
+                        if (coE == 1)
+                        {
+                            TempData["Success"] = "Country Edited Successfully";
+                            return RedirectToAction("GetCountries");
+                        }
+                        else
+                        {
+                            TempData["Error"] = "Something Went Wrong";
+                            return View();
+                        }
+                    }
+              
+            }
+            catch (Exception e)
+            {
+
+                throw e;
             }
         }
 
-        public static Country BindCountryModelToCountry(CountryModel countrym)
+        public ActionResult DeleteCountry(int CoId)
         {
-            Country co = new Country();
-            co.CountryId = countrym.CountryId;
-            co.CountryName = countrym.CountryName;
-            return co;
+            try
+            {
+                int res = coInterface.RemoveCountry(CoId);
+                if (res == 1)
+                {
+                    TempData["Success"] = "Country Deleted Successfully";
+                    return RedirectToAction("GetCountries");
+                }
+                else
+                {
+                    TempData["Error"] = "Country Is In Use";
+                    return RedirectToAction("GetCountries");
+                }
+            }
+            catch 
+            {
+
+                TempData["Error"] = "Country Is In Use";
+                return RedirectToAction("GetCountries");
+            }
         }
     }
 }

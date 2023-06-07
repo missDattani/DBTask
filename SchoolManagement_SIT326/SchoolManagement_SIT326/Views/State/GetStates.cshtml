@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SchoolManagement_SIT326.Models.Models.StateModel>
+@{
+    ViewBag.Title = "GetStates";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetStates</h2>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+<p>
+    @Html.ActionLink("Create New", "AddState")
+</p>
+<table class="table">
+    <tr>
+        <th>StateName</th>
+        <th>CountryName</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.StateName</td>
+            <td>@item.CountryName</td>
+            <td>
+                <a href="/State/AddState?StId=@item.StateId" class="btn btn-success">Edit</a> |
+                <a href="/State/GetStateById?StId=@item.StateId" class="btn btn-info">Details</a> |
+                <a href="/State/DeleteState?StId=@item.StateId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+

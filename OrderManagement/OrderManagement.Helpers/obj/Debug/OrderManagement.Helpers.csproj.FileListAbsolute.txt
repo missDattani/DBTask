@@ -1,0 +1,12 @@
+C:\Users\sit307\source\repos\OrderManagement\OrderManagement.Helpers\bin\Debug\OrderManagement.Helpers.dll
+C:\Users\sit307\source\repos\OrderManagement\OrderManagement.Helpers\bin\Debug\OrderManagement.Helpers.pdb
+C:\Users\sit307\source\repos\OrderManagement\OrderManagement.Helpers\bin\Debug\OrderManagement.Models.dll
+C:\Users\sit307\source\repos\OrderManagement\OrderManagement.Helpers\bin\Debug\EntityFramework.dll
+C:\Users\sit307\source\repos\OrderManagement\OrderManagement.Helpers\bin\Debug\OrderManagement.Models.pdb
+C:\Users\sit307\source\repos\OrderManagement\OrderManagement.Helpers\bin\Debug\OrderManagement.Models.dll.config
+C:\Users\sit307\source\repos\OrderManagement\OrderManagement.Helpers\bin\Debug\EntityFramework.xml
+C:\Users\sit307\source\repos\OrderManagement\OrderManagement.Helpers\obj\Debug\OrderManagement.Helpers.csproj.AssemblyReference.cache
+C:\Users\sit307\source\repos\OrderManagement\OrderManagement.Helpers\obj\Debug\OrderManagement.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\sit307\source\repos\OrderManagement\OrderManagement.Helpers\obj\Debug\OrderManagement.Helpers.csproj.CopyComplete
+C:\Users\sit307\source\repos\OrderManagement\OrderManagement.Helpers\obj\Debug\OrderManagement.Helpers.dll
+C:\Users\sit307\source\repos\OrderManagement\OrderManagement.Helpers\obj\Debug\OrderManagement.Helpers.pdb

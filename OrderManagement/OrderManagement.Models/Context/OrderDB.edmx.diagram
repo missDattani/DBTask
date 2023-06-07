@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="03b0ada61eb34b4d97b3a65f66f424c8" Name="Diagram1">
+        <EntityTypeShape EntityType="OrderManagementModel.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OrderManagementModel.CouponCodeMaster" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="OrderManagementModel.Item" Width="1.5" PointX="3.375" PointY="5.125" />
+        <EntityTypeShape EntityType="OrderManagementModel.Order" Width="1.5" PointX="3" PointY="0.75" />
+        <AssociationConnector Association="OrderManagementModel.FK__Orders__CouponId__5165187F" />
+        <AssociationConnector Association="OrderManagementModel.FK__Orders__UserId__5070F446" />
+        <AssociationConnector Association="OrderManagementModel.FK__Orders__ItemId__5AEE82B9" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

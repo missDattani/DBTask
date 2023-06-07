@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OrderManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Orders" Relationship="OrderManagementModel.FK__Orders__UserId__5070F446" FromRole="User" ToRole="Order" />
+  </EntityType>
+  <EntityContainer Name="OrderManagementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="CouponCodeMasters" EntityType="OrderManagementModel.CouponCodeMaster" />
+    <EntitySet Name="Items" EntityType="OrderManagementModel.Item" />
+    <EntitySet Name="Orders" EntityType="OrderManagementModel.Order" />
+    <AssociationSet Name="FK__Orders__CouponId__5165187F" Association="OrderManagementModel.FK__Orders__CouponId__5165187F">
+      <End Role="CouponCodeMaster" EntitySet="CouponCodeMasters" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__UserId__5070F446" Association="OrderManagementModel.FK__Orders__UserId__5070F446">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__ItemId__5AEE82B9" Association="OrderManagementModel.FK__Orders__ItemId__5AEE82B9">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <FunctionImport Name="SP_GetOrderDetails" ReturnType="Collection(OrderManagementModel.SP_GetOrderDetails_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="CouponCodeMaster">
+    <Key>
+      <PropertyRef Name="CouponICoded" />
+    </Key>
+    <Property Name="CouponICoded" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CouponCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CouponType" Type="Int32" />
+    <Property Name="FlatAmount" Type="Int32" />
+    <Property Name="Percentage" Type="Int32" />
+    <Property Name="ExpiryDate" Type="DateTime" Precision="0" />
+    <Property Name="UsageLimit" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="Orders" Relationship="OrderManagementModel.FK__Orders__CouponId__5165187F" FromRole="CouponCodeMaster" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Name="ItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="Orders" Relationship="OrderManagementModel.FK__Orders__ItemId__5AEE82B9" FromRole="Item" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="CouponId" Type="Int32" />
+    <Property Name="OrderDate" Type="DateTime" Precision="0" />
+    <Property Name="OrderTotalQty" Type="Int32" />
+    <Property Name="OrderAmount" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="AfterGST" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="TotalPayable" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="CouponCodeMaster" Relationship="OrderManagementModel.FK__Orders__CouponId__5165187F" FromRole="Order" ToRole="CouponCodeMaster" />
+    <NavigationProperty Name="User" Relationship="OrderManagementModel.FK__Orders__UserId__5070F446" FromRole="Order" ToRole="User" />
+    <Property Name="SGST" Type="Int32" />
+    <Property Name="CGST" Type="Int32" />
+    <Property Name="ItemId" Type="Int32" />
+    <NavigationProperty Name="Item" Relationship="OrderManagementModel.FK__Orders__ItemId__5AEE82B9" FromRole="Order" ToRole="Item" />
+  </EntityType>
+  <Association Name="FK__Orders__CouponId__5165187F">
+    <End Type="OrderManagementModel.CouponCodeMaster" Role="CouponCodeMaster" Multiplicity="0..1" />
+    <End Type="OrderManagementModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CouponCodeMaster">
+        <PropertyRef Name="CouponICoded" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CouponId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__UserId__5070F446">
+    <End Type="OrderManagementModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="OrderManagementModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__ItemId__5AEE82B9">
+    <End Type="OrderManagementModel.Item" Role="Item" Multiplicity="0..1" />
+    <End Type="OrderManagementModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ItemId" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SP_GetOrderDetails_Result">
+    <Property Type="DateTime" Name="OrderDate" Nullable="true" />
+    <Property Type="Int32" Name="OrderTotalQty" Nullable="true" />
+    <Property Type="Decimal" Name="OrderAmount" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="AfterGST" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="String" Name="PromoCode" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="TotalPayable" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="CGST" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="SGST" Nullable="true" Precision="10" Scale="2" />
+  </ComplexType>
+</Schema>

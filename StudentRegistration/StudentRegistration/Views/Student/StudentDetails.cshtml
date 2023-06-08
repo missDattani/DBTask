@@ -1,0 +1,107 @@
+﻿@model IEnumerable<StudentRegistration.Models.StudentModel>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="overview-wrap">
+                        <h2 class="title-1">Student Details</h2>
+                        <p>
+                            <a href="/Student/AddStudent" class="btn btn-primary">Add Student</a>
+                        </p>
+                        @*<button class="au-btn au-btn-icon au-btn--blue">
+            add item
+        </button>*@
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 m-t-25">
+                    <!-- <h2 class="title-1 m-b-25">Earnings By Items</h2> -->
+                    <div class=" table-responsive">
+                        <table class="table table-borderless table-striped table-earning">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        FirstName
+                                    </th>
+                                    <th>
+                                        LastName
+                                    </th>
+                                    <th>
+                                        Address
+                                    </th>
+                                    <th>
+                                        Mobile No.
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Gender
+                                    </th>
+                                    <th>
+                                        CountryName
+                                    </th>
+                                    <th>
+                                        StateName
+                                    </th>
+                                    <th>
+                                        CityName
+                                    </th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.FirstName
+                                        </td>
+                                        <td>
+                                            @item.LastName
+                                        </td>
+                                        <td>
+                                            @item.Address
+                                        </td>
+                                        <td>
+                                            @item.Contact
+                                        </td>
+                                        <td>
+                                            @item.Email
+                                        </td>
+                                        <td>
+                                            @item.Gender
+                                        </td>
+                                        <td>
+                                            @item.CountryName
+                                        </td>
+                                        <td>
+                                            @item.StateName
+                                        </td>
+                                        <td>
+                                            @item.CityName
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "UpdateStudent", new { id = item.SId }) |
+                                            @Html.ActionLink("Delete", "DeleteStudent", new { id = item.SId })
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright">
+                        <p>Copyright © <a href="#">Shaligram</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+
+

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<StudentRegistration.Models.CityModel>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="overview-wrap">
+                <h2 class="title-1">City Details</h2>
+                <p>
+                    <a href="/City/AddCity" class="btn btn-primary">Add City</a>
+                </p>
+                @*<button class="au-btn au-btn-icon au-btn--blue">
+                        add item
+                    </button>*@
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 m-t-25">
+            <div class=" table-responsive">
+                <table class="table table-borderless table-striped table-earning">
+                    <thead>
+                        <tr>
+                            <th>
+                                CityName
+                            </th>
+                            <th>
+                                StateName
+                            </th>
+                            <th>
+                                CountryName
+                            </th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @item.CityName
+                            </td>
+                            <td>
+                                @item.StateName
+                            </td>
+                            <td>
+                                @item.CountryName
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "UpdateCity", new { CiId = item.CityId }) |
+
+                                @Html.ActionLink("Delete", "DeleteCity", new { CiId = item.CityId })
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="copyright">
+                <p>Copyright © <a href="#">Shaligram</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

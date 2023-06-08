@@ -1,0 +1,42 @@
+﻿@model StudentRegistration.Models.UserModel
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="~/Content/Theme/css/Style1.css" />
+</head>
+
+<body>
+    <div class="main">
+        <form action="/Home/SignIn" method="post">
+            <h1><lable> Login </lable> </h1>
+            <div class="inset">
+                <p>
+                    <label for="email">EMAIL ADDRESS</label>
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "from-control", id = "email", @name = "email", @placeholder = "Your Email" } })
+                    @Html.ValidationMessageFor(model => model.Email, "")
+                </p>
+                <p>
+                    <label for="password">PASSWORD</label>
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "from-control", id = "pass", @name = "pass", @placeholder = "Your Password" } })
+                    @Html.ValidationMessageFor(model => model.Password, "")
+                </p>
+            </div>
+
+            <p class="p-container">
+                @*<input type="submit" value="Login">*@
+                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
+            </p>
+        </form>
+        <br /><br />
+              <h4>Dont have an account? @Html.ActionLink("Create an account", "SignUp", "Home")</h4>
+    </div>
+</body>
+</html>

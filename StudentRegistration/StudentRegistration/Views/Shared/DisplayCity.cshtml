@@ -1,0 +1,12 @@
+﻿@model StudentRegistration.Models.CityModel
+
+<option value="">-- Select Cities --</option>
+
+@if (ViewBag.Clist != null)
+{
+    foreach (var i in ViewBag.Clist)
+    {
+        <option value="@i.Value">@i.Text</option>
+    }
+}
+

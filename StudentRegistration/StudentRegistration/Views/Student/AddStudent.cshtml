@@ -1,0 +1,110 @@
+﻿@model StudentRegistration.Models.StudentModel
+
+@{
+    ViewBag.Title = "AddStudent";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/Theme/css/Style2.css">
+</head>
+<body>
+    <div class="container bg">
+        <br />
+        <br />
+        <br />
+        <br />
+        <b id="login-name">Student Registration</b>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3" id="login">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(modal => modal.FirstName, new { htmlAttributes = new { @class = "form-control", id = "fname", @name = "fname", @placeholder = "Enter FirstName" } })
+                            @Html.ValidationMessageFor(modal => modal.FirstName, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(modal => modal.LastName, new { htmlAttributes = new { @class = "form-control", id = "lname", @name = "lname", @placeholder = "Enter LastName" } })
+                            @Html.ValidationMessageFor(modal => modal.LastName, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(modal => modal.Address, new { htmlAttributes = new { @class = "form-control", id = "address", @name = "address", @placeholder = "Enter Address" } })
+                            @Html.ValidationMessageFor(modal => modal.Address, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Contact, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(modal => modal.Contact, new { htmlAttributes = new { @class = "form-control", id = "contact", @name = "contact", @placeholder = "Enter Mobile No." } })
+                            @Html.ValidationMessageFor(modal => modal.Contact, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(modal => modal.Email, new { htmlAttributes = new { @class = "form-control", id = "email", @name = "email", @placeholder = "Enter Email" } })
+                            @Html.ValidationMessageFor(modal => modal.Email, "", new { @class = "text-danger" })
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                            <div class="form-check-inline form-check">
+                                @Html.RadioButton("gender", "Male", false, new { id = "male", @class = "form-check-input" })
+                                @Html.Label("Male", "Male", new { @for = "male", @class = "form-check-label " })
+                                &nbsp; &nbsp;
+                                @Html.RadioButton("gender", "Female", false, new { id = "female", @class = "form-check-input" })
+                                @Html.Label("Female", "Female", new { @for = "female", @class = "form-check-label " })
+                                &nbsp; &nbsp;
+                                @Html.RadioButton("gender", "Other", false, new { id = "other", @class = "form-check-input" })
+                                @Html.Label("Other", "Other", new { @for = "other", @class = "form-check-label " })
+                            </div>
+                            @Html.ValidationMessageFor(modal => modal.Gender, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CountryId, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @if (ViewBag.CountryList != null)
+                            {
+                                @Html.DropDownListFor(m => m.CountryId, ViewBag.CountryList as SelectList, "--Select Country--", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(modal => modal.CountryId, "", new { @class = "text-danger" })
+                            }
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.StateId, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.DropDownListFor(m => m.StateId, new SelectList(""), "--Select State--", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(modal => modal.StateId, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CityId, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.DropDownListFor(m => m.CityId, new SelectList(""), "--Select City--", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(modal => modal.CityId, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-success" value="submit" style="border-radius:0px;">
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+     
+            <h2>@Html.ActionLink("Back to List", "Index")</h2>
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/Theme/js/mainform.js"></script>
+</body>

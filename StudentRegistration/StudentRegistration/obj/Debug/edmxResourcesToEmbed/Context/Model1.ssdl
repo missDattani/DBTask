@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PD326Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="SCity">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="varchar" MaxLength="200" />
+    <Property Name="StateId" Type="int" />
+    <Property Name="CountryId" Type="int" />
+  </EntityType>
+  <EntityType Name="SCountry">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="SState">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateName" Type="varchar" MaxLength="200" />
+    <Property Name="CountryId" Type="int" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="SId" />
+    </Key>
+    <Property Name="SId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="Contact" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="StateId" Type="int" />
+    <Property Name="CityId" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="250" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__SCity__CountryId__0B91BA14">
+    <End Role="SCountry" Type="Self.SCountry" Multiplicity="0..1" />
+    <End Role="SCity" Type="Self.SCity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SCountry">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="SCity">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SCity__StateId__0A9D95DB">
+    <End Role="SState" Type="Self.SState" Multiplicity="0..1" />
+    <End Role="SCity" Type="Self.SCity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SState">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="SCity">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SState__CountryI__07C12930">
+    <End Role="SCountry" Type="Self.SCountry" Multiplicity="0..1" />
+    <End Role="SState" Type="Self.SState" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SCountry">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="SState">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Student__CityId__10566F31">
+    <End Role="SCity" Type="Self.SCity" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SCity">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Student__Country__0E6E26BF">
+    <End Role="SCountry" Type="Self.SCountry" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SCountry">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Student__StateId__0F624AF8">
+    <End Role="SState" Type="Self.SState" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SState">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_DeleteCity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CityId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteCountry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CountryId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateId" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="PD326ModelStoreContainer">
+    <EntitySet Name="SCity" EntityType="Self.SCity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SCountry" EntityType="Self.SCountry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SState" EntityType="Self.SState" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__SCity__CountryId__0B91BA14" Association="Self.FK__SCity__CountryId__0B91BA14">
+      <End Role="SCountry" EntitySet="SCountry" />
+      <End Role="SCity" EntitySet="SCity" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SCity__StateId__0A9D95DB" Association="Self.FK__SCity__StateId__0A9D95DB">
+      <End Role="SState" EntitySet="SState" />
+      <End Role="SCity" EntitySet="SCity" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SState__CountryI__07C12930" Association="Self.FK__SState__CountryI__07C12930">
+      <End Role="SCountry" EntitySet="SCountry" />
+      <End Role="SState" EntitySet="SState" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Student__CityId__10566F31" Association="Self.FK__Student__CityId__10566F31">
+      <End Role="SCity" EntitySet="SCity" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Student__Country__0E6E26BF" Association="Self.FK__Student__Country__0E6E26BF">
+      <End Role="SCountry" EntitySet="SCountry" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Student__StateId__0F624AF8" Association="Self.FK__Student__StateId__0F624AF8">
+      <End Role="SState" EntitySet="SState" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

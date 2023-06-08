@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PD326ModelStoreContainer" CdmEntityContainer="PD326Entities">
+    <EntitySetMapping Name="SCities">
+      <EntityTypeMapping TypeName="PD326Model.SCity">
+        <MappingFragment StoreEntitySet="SCity">
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SCountries">
+      <EntityTypeMapping TypeName="PD326Model.SCountry">
+        <MappingFragment StoreEntitySet="SCountry">
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SStates">
+      <EntityTypeMapping TypeName="PD326Model.SState">
+        <MappingFragment StoreEntitySet="SState">
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="PD326Model.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="SId" ColumnName="SId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="PD326Model.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_DeleteCountry" FunctionName="PD326Model.Store.sp_DeleteCountry" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteState" FunctionName="PD326Model.Store.sp_DeleteState" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteCity" FunctionName="PD326Model.Store.sp_DeleteCity" />
+  </EntityContainerMapping>
+</Mapping>

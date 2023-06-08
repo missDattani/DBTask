@@ -1,0 +1,53 @@
+﻿@model StudentRegistration.Models.UserModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="~/Content/Theme/css/Style1.css" />
+</head>
+
+<body>
+    <div class="main">
+        <form action="/Home/SignUp" method="post">
+            <h1><lable>Sign Up</lable> </h1>
+            <div class="inset">
+                <p>
+                    <label for="userName">USER NAME</label>
+                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "from-control", id = "userName", @name = "userName", @placeholder = "User Name" } })
+                    @Html.ValidationMessageFor(model => model.UserName, "")
+                </p>
+                <p>
+                    <label for="email">EMAIL ADDRESS</label>
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "from-control", id = "email", @name = "email", @placeholder = "Your Email" } })
+                    @Html.ValidationMessageFor(model => model.Email, "")
+                </p>
+                <p>
+                    <label for="password">PASSWORD</label>
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "from-control", id = "pass", @name = "pass", @placeholder = "Your Password" } })
+                    @Html.ValidationMessageFor(model => model.Password, "")
+                </p>
+                <p>
+                    <label for="cpassword">CONFIRM PASSWORD</label>
+                    @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "from-control", id = "cpassword", @name = "cpassword", @placeholder = "Confirm Password" } })
+                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "")
+                </p>
+            </div>
+
+            <p class="p-container">
+                @*<input type="submit" value="Login">*@
+                <input type="submit" name="signup" id="signup" class="form-submit" value="Sign up" />
+            </p>
+        </form>
+        <br /><br />
+        @Html.ActionLink("Already Have Account?", "SignIn", "Home")
+    </div>
+</body>
+</html>
+

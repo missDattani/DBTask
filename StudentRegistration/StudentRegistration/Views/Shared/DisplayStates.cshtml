@@ -1,0 +1,11 @@
+﻿@model StudentRegistration.Models.StateModel
+
+<option value="">-- Select States --</option>
+
+@if (ViewBag.Slist != null)
+{
+    foreach (var i in ViewBag.Slist)
+    {
+        <option value="@i.Value">@i.Text</option>
+    }
+}

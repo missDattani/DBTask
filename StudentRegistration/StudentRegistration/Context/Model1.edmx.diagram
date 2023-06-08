@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bd4e469e932c435fa5b46cb35b06a16a" Name="Diagram1">
+        <EntityTypeShape EntityType="PD326Model.SCity" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PD326Model.SCountry" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PD326Model.SState" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PD326Model.Student" Width="1.5" PointX="7.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PD326Model.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="PD326Model.FK__SCity__CountryId__0B91BA14" ManuallyRouted="false" />
+        <AssociationConnector Association="PD326Model.FK__SCity__StateId__0A9D95DB" ManuallyRouted="false" />
+        <AssociationConnector Association="PD326Model.FK__Student__CityId__10566F31" ManuallyRouted="false" />
+        <AssociationConnector Association="PD326Model.FK__SState__CountryI__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="PD326Model.FK__Student__Country__0E6E26BF" ManuallyRouted="false" />
+        <AssociationConnector Association="PD326Model.FK__Student__StateId__0F624AF8" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

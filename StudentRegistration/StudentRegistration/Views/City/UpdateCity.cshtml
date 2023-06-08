@@ -1,0 +1,57 @@
+﻿@model StudentRegistration.Models.CityModel
+
+@{
+    ViewBag.Title = "UpdateCity";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="~/Content/Theme/css/Style1.css" />
+</head>
+
+<body>
+    <div class="main">
+        <form action="/City/UpdateCity" method="post">
+            <h1><lable>Update City</lable> </h1>
+            <div class="inset">
+                @Html.HiddenFor(model => model.CityId)
+                <p>
+                    <label for="City">CITY NAME</label>
+                    @Html.EditorFor(model => model.CityName, new { htmlAttributes = new { @class = "from-control", @placeholder = "Enter City Name" } })
+                    @Html.ValidationMessageFor(model => model.CityName, "")
+                </p>
+                <p>
+                    <label for="Country">COUNTRY</label>
+                    @if (ViewBag.CountryList != null)
+                    {
+                        @Html.DropDownListFor(m => m.CountryId, ViewBag.CountryList as SelectList, "--Select Country--", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(modal => modal.CountryId, "", new { @class = "text-danger" })
+                    }
+                </p>
+                <p>
+                    <label for="State">STATE</label>
+                    @Html.DropDownListFor(m => m.StateId, new SelectList(""), "--Select State--", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(modal => modal.StateId, "", new { @class = "text-danger" })
+                </p>
+            </div>
+
+            <p class="p-container">
+                <input type="submit" class="form-submit" value="Submit" />
+            </p>
+        </form>
+        <br /><br />
+        @Html.ActionLink("Back To List", "CityIndex", "City")
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/Theme/js/mainform.js"></script>
+</body>
+</html>
+
+
+
+

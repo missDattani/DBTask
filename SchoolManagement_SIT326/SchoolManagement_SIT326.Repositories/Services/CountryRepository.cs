@@ -35,14 +35,15 @@ namespace SchoolManagement_SIT326.Repositories.Services
             }
         }
 
-        public Country DisplayCountryById(int? CoId)
+        public CountryModel DisplayCountryById(int? CoId)
         {
             try
             {
                 Country country = entities.Country.Where(m => m.CountryId == CoId).FirstOrDefault();
-                if (country != null)
+                CountryModel countryModel = CountryHelper.BindCountryToCountryModel(country);
+                if (countryModel != null)
                 {
-                    return country;
+                    return countryModel;
                 }
                 else
                 {

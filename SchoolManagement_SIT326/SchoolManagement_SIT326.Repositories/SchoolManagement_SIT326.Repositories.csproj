@@ -60,7 +60,6 @@
     <Compile Include="Repository\ISubjectInterface.cs" />
     <Compile Include="Repository\ITeacherInterface.cs" />
     <Compile Include="Repository\IUserInterface.cs" />
-    <Compile Include="Repository\Teacher.cs" />
     <Compile Include="Services\CityRepository.cs" />
     <Compile Include="Services\CountryRepository.cs" />
     <Compile Include="Services\StateRepository.cs" />

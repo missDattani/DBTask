@@ -36,14 +36,15 @@ namespace SchoolManagement_SIT326.Repositories.Services
                 throw e;
             }
         }
-        public Teachers DisplayTeacherById(int? TecId)
+        public TeacherModel DisplayTeacherById(int? TecId)
         {
             try
             {
                 Teachers teachers = entities.Teachers.Where(m => m.TecId == TecId).FirstOrDefault();
-                if (teachers != null)
+                TeacherModel teacherModel = TeacherHelper.BindTeacherToTecaherModel(teachers);
+                if (teacherModel != null)
                 {
-                    return teachers;
+                    return teacherModel;
                 }
                 else
                 {

@@ -14,8 +14,8 @@ namespace SchoolManagement_SIT326.Controllers
     [LoginAction]
     public class StateController : Controller
     {
-        private readonly IStateInterface stInterface;
-        private readonly ICountryInterface coInterface;
+        public readonly IStateInterface stInterface;
+        public readonly ICountryInterface coInterface;
 
 
         public StateController(IStateInterface stInterface, ICountryInterface coInterface)
@@ -42,8 +42,8 @@ namespace SchoolManagement_SIT326.Controllers
         {
             try
             {
-                States state = stInterface.DisplayStateById(StId);
-                StateModel sModel = StateHelper.BindStateToStateModel(state);
+                
+                StateModel sModel = stInterface.DisplayStateById(StId);
                 if (sModel != null)
                 {
                     return View(sModel);
@@ -70,8 +70,8 @@ namespace SchoolManagement_SIT326.Controllers
             }
             else
             {
-                States states = stInterface.DisplayStateById(StId);
-                StateModel sModel = StateHelper.BindStateToStateModel(states);
+              
+                StateModel sModel = stInterface.DisplayStateById(StId);
                 return View(sModel);
              
             }

@@ -11,7 +11,7 @@ namespace SchoolManagement_SIT326.Repositories.Repository
     public interface IStudentInterface
     {
         List<StudentModel> DisplayStudent();
-        Student DisplayStudentById(int? StuId);
+        StudentModel DisplayStudentById(int? StuId);
         int InsStudent(StudentModel stuM, int? StuId);
         int RemoveStudent(int StuId);
     }

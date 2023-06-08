@@ -11,7 +11,7 @@ namespace SchoolManagement_SIT326.Repositories.Repository
     public interface ICityInterface
     {
         List<CityModel> DisplayCities();
-        City DisplayCityById(int? CtId);
+        CityModel DisplayCityById(int? CtId);
         int InsCity(CityModel cityM,int? CtId);
         int RemoveCity(int CtId);
 

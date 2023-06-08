@@ -37,15 +37,16 @@ namespace SchoolManagement_SIT326.Repositories.Services
             }
         }
 
-        public States DisplayStateById(int? StId)
+        public StateModel DisplayStateById(int? StId)
         {
             try
             {
                 States states = entities.States.Where(m => m.StateId == StId).FirstOrDefault();
-                if (states != null)
+                StateModel stateModel = StateHelper.BindStateToStateModel(states);
+                if (stateModel != null)
                 {
                     
-                    return states;
+                    return stateModel;
                 }
                 else
                 {

@@ -14,8 +14,8 @@ namespace SchoolManagement_SIT326.Controllers
     [LoginAction]
     public class CityController : Controller
     {
-        private readonly ICityInterface ctInterface;
-        private readonly ICountryInterface coInterface;
+        public readonly ICityInterface ctInterface;
+        public readonly ICountryInterface coInterface;
 
 
         public CityController(ICityInterface ctInterface, ICountryInterface coInterface)
@@ -43,11 +43,11 @@ namespace SchoolManagement_SIT326.Controllers
         {
             try
             {
-                City city = ctInterface.DisplayCityById(CtId);
-                CityModel ctModel = CityHelper.BindCityModelToCity(city);
-                if (ctModel != null)
+                CityModel city = ctInterface.DisplayCityById(CtId);
+                //CityModel ctModel = CityHelper.BindCityModelToCity(city);
+                if (city != null)
                 {
-                    return View(ctModel);
+                    return View(city);
                 }
                 else
                 {
@@ -72,9 +72,9 @@ namespace SchoolManagement_SIT326.Controllers
                 }
                 else
                 {
-                    City ct = ctInterface.DisplayCityById(CtId);
-                    CityModel ctModel = CityHelper.BindCityModelToCity(ct);
-                    return View(ctModel);
+                    CityModel ctM = ctInterface.DisplayCityById(CtId);
+                
+                    return View(ctM);
                 }
             }
             catch (Exception e)

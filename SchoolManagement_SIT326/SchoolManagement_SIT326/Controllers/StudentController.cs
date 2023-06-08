@@ -13,9 +13,9 @@ namespace SchoolManagement_SIT326.Controllers
     [LoginAction]
     public class StudentController : Controller
     {
-        private readonly IStudentInterface stuInterface;
-        private readonly ICountryInterface coInterface;
-        private readonly ISubjectInterface subInterface;
+        public readonly IStudentInterface stuInterface;
+        public readonly ICountryInterface coInterface;
+        public readonly ISubjectInterface subInterface;
 
         public StudentController(IStudentInterface stuInterface, ICountryInterface coInterface, ISubjectInterface subInterface)
         {
@@ -73,8 +73,8 @@ namespace SchoolManagement_SIT326.Controllers
                 }
                 else
                 {
-                    Student std = stuInterface.DisplayStudentById(StuId);
-                    StudentModel stuModel = StudentHelper.BindStudentToStudentModel(std);
+                  
+                    StudentModel stuModel = stuInterface.DisplayStudentById(StuId);
                     return View(stuModel);
                 }
             }

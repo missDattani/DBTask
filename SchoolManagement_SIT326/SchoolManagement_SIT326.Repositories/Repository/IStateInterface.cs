@@ -11,7 +11,7 @@ namespace SchoolManagement_SIT326.Repositories.Repository
     public interface IStateInterface
     {
         List<StateModel> DisplayStates();
-        States DisplayStateById(int? StId);
+        StateModel DisplayStateById(int? StId);
         int InsStates(StateModel stModel, int? StId);
         int RemoveState(int StId);
 

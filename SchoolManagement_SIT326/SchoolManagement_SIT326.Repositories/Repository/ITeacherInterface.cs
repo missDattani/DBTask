@@ -11,7 +11,7 @@ namespace SchoolManagement_SIT326.Repositories.Repository
     public interface ITeacherInterface
     {
         List<TeacherModel> DisplayTeachers();
-        Teachers DisplayTeacherById(int? TecId);
+        TeacherModel DisplayTeacherById(int? TecId);
         int InsTeacher(TeacherModel tecM, int? TecId);
         int RemoveTeacher(int TecId);
     }

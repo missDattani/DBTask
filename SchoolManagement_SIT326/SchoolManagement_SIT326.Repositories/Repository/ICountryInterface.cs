@@ -11,7 +11,7 @@ namespace SchoolManagement_SIT326.Repositories.Repository
     public interface ICountryInterface
     {
         List<CountryModel> DisplayCountries();
-        Country DisplayCountryById(int? CoId);
+        CountryModel DisplayCountryById(int? CoId);
         int InsCountries(CountryModel country,int? CoId);
         int RemoveCountry(int CoId);
 

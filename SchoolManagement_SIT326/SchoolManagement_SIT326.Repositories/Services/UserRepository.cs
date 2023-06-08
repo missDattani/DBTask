@@ -38,15 +38,16 @@ namespace SchoolManagement_SIT326.Repositories.Services
             }
         }
 
-        public Users DisplayUserById(int? Id)
+        public UserModel DisplayUserById(int? Id)
         {
             try
             {
                 Users users = entities.Users.Where(m => m.Id == Id).FirstOrDefault();
-                if (users != null)
+                UserModel userModel = UserHelper.BindUserToUserModel(users);
+                if (userModel != null)
                 {
                  
-                    return users;
+                    return userModel;
                 }
                 else
                 {

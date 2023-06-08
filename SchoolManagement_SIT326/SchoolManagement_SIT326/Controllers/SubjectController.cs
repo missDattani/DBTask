@@ -13,7 +13,7 @@ namespace SchoolManagement_SIT326.Controllers
     [LoginAction]
     public class SubjectController : Controller
     {
-        private readonly ISubjectInterface subInterface;
+        public readonly ISubjectInterface subInterface;
 
         public SubjectController(ISubjectInterface subInterface)
         {
@@ -38,8 +38,8 @@ namespace SchoolManagement_SIT326.Controllers
         {
             try
             {
-                Subjects sub = subInterface.DisplaySubjectById(SubId);
-                SubjectModel subModel = SubjectHelper.BindSubjectToSubjectModel(sub);
+            
+                SubjectModel subModel = subInterface.DisplaySubjectById(SubId);
                 if (subModel != null)
                 {
                     return View(subModel);
@@ -68,8 +68,8 @@ namespace SchoolManagement_SIT326.Controllers
                 }
                 else
                 {
-                    Subjects sub = subInterface.DisplaySubjectById(SubId);
-                    SubjectModel subModel = SubjectHelper.BindSubjectToSubjectModel(sub);
+               
+                    SubjectModel subModel = subInterface.DisplaySubjectById(SubId);
                     return View(subModel);
                 }
             }

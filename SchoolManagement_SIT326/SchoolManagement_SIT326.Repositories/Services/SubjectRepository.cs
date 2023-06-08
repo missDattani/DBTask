@@ -34,14 +34,15 @@ namespace SchoolManagement_SIT326.Repositories.Services
                 throw e;
             }
         }
-        public Subjects DisplaySubjectById(int? SubId)
+        public SubjectModel DisplaySubjectById(int? SubId)
         {
             try
             {
                 Subjects sub = entities.Subjects.Where(m => m.SubId == SubId).FirstOrDefault();
-                if (sub != null)
+                SubjectModel subjectModel = SubjectHelper.BindSubjectToSubjectModel(sub);
+                if (subjectModel != null)
                 {
-                    return sub;
+                    return subjectModel;
                 }
                 else
                 {

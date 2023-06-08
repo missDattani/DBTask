@@ -23,7 +23,7 @@
             
             $("#CityId").empty();
             $("#CityId").append(`<option value="">--Select City--</option>`);
-            console.log(StateId);
+       /*     console.log(StateId);*/
             $.ajax({
                 method: "GET",
                 url: "/City/SelectCityList?id=" + StateId,

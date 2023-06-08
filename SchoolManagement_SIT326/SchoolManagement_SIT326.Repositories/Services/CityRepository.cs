@@ -35,15 +35,16 @@ namespace SchoolManagement_SIT326.Repositories.Services
             }
         }
 
-        public City DisplayCityById(int? CtId)
+        public CityModel DisplayCityById(int? CtId)
         {
             try
             {
                 City city = entities.City.Where(m => m.CityId == CtId).FirstOrDefault();
-                if (city != null)
+                CityModel ctModel = CityHelper.BindCityModelToCity(city);
+                if (ctModel != null)
                 {
                   
-                    return city;
+                    return ctModel;
                 }
                 else
                 {

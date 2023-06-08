@@ -35,14 +35,15 @@ namespace SchoolManagement_SIT326.Repositories.Services
             }
         }
 
-        public Student DisplayStudentById(int? StuId)
+        public StudentModel DisplayStudentById(int? StuId)
         {
             try
             {
                 Student std = entities.Student.Where(m => m.StuId == StuId).FirstOrDefault();
-                if (std != null)
+                StudentModel studentModel = StudentHelper.BindStudentToStudentModel(std);
+                if (studentModel != null)
                 {
-                    return std;
+                    return studentModel;
                 }
                 else
                 {

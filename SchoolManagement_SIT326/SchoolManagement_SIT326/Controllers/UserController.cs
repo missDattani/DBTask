@@ -13,9 +13,7 @@ namespace SchoolManagement_SIT326.Controllers
 {
     public class UserController : Controller
     {
-        private readonly IUserInterface uInterface;
-
-     
+        public readonly IUserInterface uInterface;
 
         public UserController(IUserInterface uInterface)
         {
@@ -40,8 +38,8 @@ namespace SchoolManagement_SIT326.Controllers
         {
             try
             {
-                Users us = uInterface.DisplayUserById(Id);
-                UserModel UModel = UserHelper.BindUserToUserModel(us);
+              
+                UserModel UModel = uInterface.DisplayUserById(Id);
 
                 if (UModel != null)
                 {
@@ -70,8 +68,8 @@ namespace SchoolManagement_SIT326.Controllers
                 }
                 else
                 {
-                    Users us = uInterface.DisplayUserById(Id);
-                    UserModel UModel = UserHelper.BindUserToUserModel(us);
+                 
+                    UserModel UModel = uInterface.DisplayUserById(Id);
                     return View(UModel);
                 }
             }

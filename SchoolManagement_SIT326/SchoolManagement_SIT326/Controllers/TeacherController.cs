@@ -13,9 +13,9 @@ namespace SchoolManagement_SIT326.Controllers
     [LoginAction]
     public class TeacherController : Controller
     {
-        private readonly ITeacherInterface tecInterface;
-        private readonly ICountryInterface coInterface;
-        private readonly ISubjectInterface subInterface;
+        public readonly ITeacherInterface tecInterface;
+        public readonly ICountryInterface coInterface;
+        public readonly ISubjectInterface subInterface;
 
 
 
@@ -75,8 +75,8 @@ namespace SchoolManagement_SIT326.Controllers
                 }
                 else
                 {
-                    Teachers tec = tecInterface.DisplayTeacherById(TecId);
-                    TeacherModel tecModel = TeacherHelper.BindTeacherToTecaherModel(tec);
+                
+                    TeacherModel tecModel = tecInterface.DisplayTeacherById(TecId);
                     return View(tecModel);
                 }
             }

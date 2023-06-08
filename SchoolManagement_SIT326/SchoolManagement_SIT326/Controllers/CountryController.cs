@@ -13,7 +13,7 @@ namespace SchoolManagement_SIT326.Controllers
     [LoginAction]
     public class CountryController : Controller
     {
-       private readonly ICountryInterface coInterface;
+        public readonly ICountryInterface coInterface;
 
         public CountryController(ICountryInterface coInterface)
         {
@@ -36,8 +36,8 @@ namespace SchoolManagement_SIT326.Controllers
 
         public ActionResult GetCountryById(int CoId)
         {
-            Country co = coInterface.DisplayCountryById(CoId);
-            CountryModel coModel = CountryHelper.BindCountryToCountryModel(co);
+           
+            CountryModel coModel = coInterface.DisplayCountryById(CoId);
             if (coModel != null)
             {
                 return View(coModel);
@@ -59,8 +59,8 @@ namespace SchoolManagement_SIT326.Controllers
                 }
                 else
                 {
-                    Country country = coInterface.DisplayCountryById(CoId);
-                    CountryModel coModel = CountryHelper.BindCountryToCountryModel(country);
+                    
+                    CountryModel coModel = coInterface.DisplayCountryById(CoId);
                     return View(coModel);
                 }
             }

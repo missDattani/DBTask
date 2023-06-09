@@ -8,13 +8,43 @@
 <div>
     <h3 class="text-success">@TempData["Success"]</h3>
 </div>
+<div class="modal fade" id="myModel" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row"><h5>OrderDate:</h5>&nbsp;<span id="OrderDateSpan"></span></div>
+                    <div class="row"><h5>OrderTotalQty:</h5>&nbsp;<span id="OrderTotalQtySpan"></span></div>
+                    <div class="row"><h5>OrderAmount:</h5>&nbsp;<span id="OrderAmountSpan"></span></div>
+                    <div class="row"><h5>AfterGST:</h5>&nbsp;<span id="AfterGSTSpan"></span></div>
+                    <div class="row"><h5>PromoCode:</h5>&nbsp;<span id="PromoCodeSpan"></span></div>
+                    <div class="row"><h5>TotalPayable:</h5>&nbsp;<span id="TotalPayableSpan"></span></div>
+                    <div class="row"><h5>CGST:</h5>&nbsp;<span id="CGSTSpan"></span></div>
+                    <div class="row"><h5>SGST:</h5>&nbsp;<span id="SGSTSpan"></span></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <h2>OrderList</h2>
 
 
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.OrderId)
+
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.OrderDate)
+
         </th>
         <th>
             @Html.DisplayNameFor(model => model.OrderTotalQty)
@@ -41,88 +71,79 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderTotalQty)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderAmount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AfterGST)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PromoCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotalPayable)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CGST)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SGST)
-        </td>
-        <td data-toggle="modal" data-target="#myModel" id="info">
-            (i)
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderTotalQty)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderAmount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AfterGST)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PromoCode)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TotalPayable)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CGST)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SGST)
+    </td>
+    <td data-toggle="modal" data-target="#myModel" >
+        <button id="info" class="btn btn-info">(i)</button>
+    </td>
+</tr>
 }
 
 </table>
 
-<div class="modal fade" id="myModel" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="container">
-                    <h4>OrderDate:</h4>&nbsp;<span id="OrderDateSpan"></span>
-                    <h4>OrderTotalQty:</h4>&nbsp;<span id="OrderTotalQtySpan"></span>
-                    <h4>OrderAmount:</h4>&nbsp;<span id="OrderAmountSpan"></span>
-                    <h4>AfterGST:</h4>&nbsp;<span id="AfterGSTSpan"></span>
-                    <h4>PromoCode:</h4>&nbsp;<span id="PromoCodeSpan"></span>
-                    <h4>TotalPayable:</h4>&nbsp;<span id="TotalPayableSpan"></span>
-                    <h4>CGST:</h4>&nbsp;<span id="CGSTSpan"></span>
-                    <h4>SGST:</h4>&nbsp;<span id="SGSTSpan"></span>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-@*<script src="~/Scripts/jquery-3.4.1.js"></script>
+
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
 <script>
     $(document).ready(function () {
-       
-             
-                    let currentRow = $(this).closest('tr');
+        $(".table tr td").on('click', '#info', function () {
+            let currentRow = $(this).closest('tr');
+            let OrderId = currentRow.find("td:eq(0)").html();
+            //var id = $.trim(OrderId);
+           // console.log(currentRow);
+            //console.log(OrderId);
+            $.ajax({
+                method: "GET",
+                url: "/GetData/GetOrderList?Id=" + OrderId,
+                success: function (res) {
+                   // console.log(res);
+                    var data = JSON.parse(res);
+                    //console.log(data);
+                    $("#OrderDateSpan").html(data.OrderDate);
+                    $("#OrderTotalQtySpan").html(data.OrderTotalQty);
+                    $("#OrderAmountSpan").html(data.OrderAmount);
+                    $("#AfterGSTSpan").html(data.AfterGST);
+                 
+                    if ($("#Promocode").val() != null) {
+                        $("#PromoCodeSpan").html(data.PromoCode);
+                    } else {
+                        $("#PromoCodeSpan").html("No Coupon Applied");
+                    }
 
-                    let date = currentRow.find("td:eq(0)").html();
-                    $("#OrderDateSpan").html(date);
-                    let qty = currentRow.find("td:eq(1)").html();
-                    $("#OrderTotalQtySpan").html(qty);
-                    let amount = currentRow.find("td:eq(2)").html();
-                    $("#OrderAmountSpan").html(amount);
-                    let gst = currentRow.find("td:eq(3)").html();
-                    $("#AfterGSTSpan").html(gst);
-                    let coupon = currentRow.find("td:eq(4)").html();
-                    $("#PromoCodeSpan").html(coupon);
-                    let pay = currentRow.find("td:eq(5)").html();
-                    $("#TotalPayableSpan").html(pay);
-                    let cgst = currentRow.find("td:eq(6)").html();
-                    $("#CGSTSpan").html(cgst);
-                    let sgst = currentRow.find("td:eq(7)").html();
-                    $("#SGSTSpan").html(sgst);
-               
-            
+                    $("#TotalPayableSpan").html(data.TotalPayable);            
+                    $("#CGSTSpan").html(data.CGST);    
+                    $("#SGSTSpan").html(data.SGST);
+                }
+            })
+        });
+
+                    
 
     });
-</script>*@
+</script>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,11 @@ namespace OrderManagement
     {
         protected void Application_Start()
         {
+            JsonConvert.DefaultSettings = () => new JsonSerializerSettings
+            {
+                Formatting = Newtonsoft.Json.Formatting.Indented,
+                ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            };
             UnityConfig.RegisterComponents();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

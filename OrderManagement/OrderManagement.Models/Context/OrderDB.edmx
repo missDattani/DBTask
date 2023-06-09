@@ -142,7 +142,7 @@
             <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
           <FunctionImport Name="SP_GetOrderDetails" ReturnType="Collection(OrderManagementModel.SP_GetOrderDetails_Result)">
-            <Parameter Name="UserId" Mode="In" Type="Int32" />
+          <Parameter Name="UserId" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="CouponCodeMaster">
@@ -232,6 +232,7 @@
           <Property Type="Decimal" Name="TotalPayable" Nullable="true" Precision="10" Scale="2" />
           <Property Type="Decimal" Name="CGST" Nullable="true" Precision="10" Scale="2" />
           <Property Type="Decimal" Name="SGST" Nullable="true" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="OrderId" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -301,6 +302,7 @@
                 <ScalarProperty Name="TotalPayable" ColumnName="TotalPayable" />
                 <ScalarProperty Name="CGST" ColumnName="CGST" />
                 <ScalarProperty Name="SGST" ColumnName="SGST" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

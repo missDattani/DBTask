@@ -11,8 +11,10 @@ namespace OrderManagement.Models.Context
 {
     using System;
     
+
     public partial class SP_GetOrderDetails_Result
     {
+       
         public Nullable<System.DateTime> OrderDate { get; set; }
         public Nullable<int> OrderTotalQty { get; set; }
         public Nullable<decimal> OrderAmount { get; set; }
@@ -21,5 +23,6 @@ namespace OrderManagement.Models.Context
         public Nullable<decimal> TotalPayable { get; set; }
         public Nullable<decimal> CGST { get; set; }
         public Nullable<decimal> SGST { get; set; }
+        public int OrderId { get; set; }
     }
 }

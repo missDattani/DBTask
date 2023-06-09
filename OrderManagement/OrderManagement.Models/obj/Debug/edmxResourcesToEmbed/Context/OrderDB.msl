@@ -63,6 +63,7 @@
           <ScalarProperty Name="TotalPayable" ColumnName="TotalPayable" />
           <ScalarProperty Name="CGST" ColumnName="CGST" />
           <ScalarProperty Name="SGST" ColumnName="SGST" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

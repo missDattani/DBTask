@@ -51,6 +51,7 @@ namespace OrderManagement.Controllers
                     entities.Orders.Add(order1);
                     entities.SaveChanges();
                     TempData["Success"] = "Order Added Successfully";
+                   
                 }
                 else
                 {

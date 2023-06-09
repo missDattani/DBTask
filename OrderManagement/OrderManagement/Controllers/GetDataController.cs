@@ -1,4 +1,5 @@
-﻿using OrderManagement.Models.Context;
+﻿using Newtonsoft.Json;
+using OrderManagement.Models.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace OrderManagement.Controllers
         public JsonResult GetCouponDiscount(string CouponCode)
         {
             entities.Configuration.ProxyCreationEnabled = false;
+    
             CouponCodeMaster coupons = entities.CouponCodeMasters.Where(m => m.CouponCode.Equals(CouponCode)).FirstOrDefault();
             if(coupons != null)
             {
@@ -31,6 +33,13 @@ namespace OrderManagement.Controllers
                 return Json("", JsonRequestBehavior.AllowGet);
 
             }
+        }
+
+        public JsonResult GetOrderList(int Id)
+        {
+            Order order = entities.Orders.Where(m => m.OrderId == Id).FirstOrDefault();
+            var json = JsonConvert.SerializeObject(order);
+            return Json(json, JsonRequestBehavior.AllowGet);
         }
     }
 }

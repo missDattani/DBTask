@@ -119,5 +119,6 @@
     <Property Type="Decimal" Name="TotalPayable" Nullable="true" Precision="10" Scale="2" />
     <Property Type="Decimal" Name="CGST" Nullable="true" Precision="10" Scale="2" />
     <Property Type="Decimal" Name="SGST" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Int32" Name="OrderId" Nullable="false" />
   </ComplexType>
 </Schema>

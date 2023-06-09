@@ -145,7 +145,8 @@
                 type: "GET",
                 url: "/GetData/GetCouponDiscount?CouponCode=" + $("#CouponId").val(),
                 success: function (response) {
-                    if (response != "" && response.UsageLimit >= 1) {
+                    if (response != "" && response.UsageLimit >= 1 && response.IsActive == 1) {
+                       
                         if (response.CouponType == 1) {
                             let finalAmount = Number($("#TotalPayAmount").html()) - response.FlatAmount;
                             finalAmount = Math.floor(finalAmount);
@@ -200,7 +201,7 @@
             currentRow.find("td:eq(1)").empty().append(row);
             currentRow.find("button:eq(0)").html("Save");
         } else {
-            let currentQty = currentRow.find("input:eq(0)")
+            let currentQty = currentRow.find("input:eq(1)")
             if (currentQty.val() <= 0) {
                 $("#OrderItemQty").next().html("Please Enter Valid Quantity");
             } else {

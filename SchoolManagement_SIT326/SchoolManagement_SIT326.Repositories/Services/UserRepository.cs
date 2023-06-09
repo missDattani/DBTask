@@ -68,21 +68,28 @@ namespace SchoolManagement_SIT326.Repositories.Services
             try
             {
                 var checkUser = entities.Users.Where(m => m.Email == userM.Email).FirstOrDefault();
-                if (checkUser != null)
+                var checkPass = entities.Users.Where(m => m.PassWord == userM.PassWord).FirstOrDefault();
+                if (checkUser == null && checkPass == null)
                 {
-                    if (checkUser.PassWord == userM.PassWord)
-                    {
-                        return checkUser.FirstName + "" + checkUser.LastName;
-                    }
-                    else
+                    return "Invalid Email & Password";
+                }
+                else if (checkUser != null)
+                {
+                    if(checkUser.PassWord != userM.PassWord)
                     {
                         return "Invalid Password";
                     }
+                    else
+                    {
+                        return checkUser.FirstName + "" + checkUser.LastName;
+                        
+                    }  
                 }
                 else
                 {
                     return "Invalid Email";
                 }
+
             }
             catch (Exception e)
             {

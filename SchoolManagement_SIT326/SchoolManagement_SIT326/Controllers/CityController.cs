@@ -44,7 +44,7 @@ namespace SchoolManagement_SIT326.Controllers
             try
             {
                 CityModel city = ctInterface.DisplayCityById(CtId);
-                //CityModel ctModel = CityHelper.BindCityModelToCity(city);
+        
                 if (city != null)
                 {
                     return View(city);

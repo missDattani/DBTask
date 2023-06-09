@@ -42,8 +42,8 @@ namespace SchoolManagement_SIT326.Controllers
         {
             try
             {
-                Student std = stuInterface.DisplayStudentById(StuId);
-                StudentModel stuModel = StudentHelper.BindStudentToStudentModel(std);
+             
+                StudentModel stuModel = stuInterface.DisplayStudentById(StuId);
                 if (stuModel != null)
                 {
                     return View(stuModel);

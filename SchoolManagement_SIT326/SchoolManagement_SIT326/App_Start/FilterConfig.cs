@@ -20,6 +20,7 @@ namespace SchoolManagement_SIT326
                 filterContext.Result = new RedirectResult("~/User/SignIn");
             }
         }
+
     }
 
 }

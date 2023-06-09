@@ -138,7 +138,7 @@ namespace SchoolManagement_SIT326.Controllers
             try
             {
                 string user = uInterface.SignIn(userM);
-                if (user == "Invalid Email" || user == "Invalid Password")
+                if (user == "Invalid Email" || user == "Invalid Password" || user == "Invalid Email & Password")
                 {
                     TempData["Error"] = user;
                     return View();
@@ -183,9 +183,17 @@ namespace SchoolManagement_SIT326.Controllers
 
         public ActionResult Logout()
         {
-            Session.Abandon();
-            FormsAuthentication.SignOut();
-            return RedirectToAction("SignIn");
+            try
+            {
+                Session.Abandon();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("SignIn");
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
         }
     }
 }

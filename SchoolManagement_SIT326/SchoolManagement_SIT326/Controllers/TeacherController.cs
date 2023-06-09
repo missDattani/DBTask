@@ -44,8 +44,7 @@ namespace SchoolManagement_SIT326.Controllers
         {
             try
             {
-                Teachers tec = tecInterface.DisplayTeacherById(TecId);
-                TeacherModel tecModel = TeacherHelper.BindTeacherToTecaherModel(tec);
+                TeacherModel tecModel = tecInterface.DisplayTeacherById(TecId);
                 if (tecModel != null)
                 {
                     return View(tecModel);

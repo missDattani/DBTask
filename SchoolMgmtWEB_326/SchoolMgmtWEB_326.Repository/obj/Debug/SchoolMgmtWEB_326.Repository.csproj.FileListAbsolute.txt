@@ -1,0 +1,17 @@
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\bin\Debug\SchoolMgmtWEB_326.Repository.dll.config
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\bin\Debug\SchoolMgmtWEB_326.Repository.dll
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\bin\Debug\SchoolMgmtWEB_326.Repository.pdb
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\bin\Debug\EntityFramework.dll
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\bin\Debug\SchoolMgmtWEB_326.Helpers.dll
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\bin\Debug\SchoolMgmtWEB_326.Models.dll
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\bin\Debug\SchoolMgmtWEB_326.Helpers.pdb
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\bin\Debug\SchoolMgmtWEB_326.Models.pdb
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\bin\Debug\SchoolMgmtWEB_326.Models.dll.config
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\bin\Debug\EntityFramework.xml
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\obj\Debug\SchoolMgmtWEB_326.Repository.csproj.AssemblyReference.cache
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\obj\Debug\SchoolMgmtWEB_326.Repository.csproj.CoreCompileInputs.cache
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\obj\Debug\SchoolMgmtWEB_326.Repository.csproj.CopyComplete
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\obj\Debug\SchoolMgmtWEB_326.Repository.dll
+C:\Users\sit307\source\repos\SchoolMgmtWEB_326\SchoolMgmtWEB_326.Repository\obj\Debug\SchoolMgmtWEB_326.Repository.pdb

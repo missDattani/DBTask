@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SchoolMgmtWEB_326.Models.Models.CountryModel>
+
+@{
+    ViewBag.Title = "GetCountries";
+    Layout = "~/Views/Shared/LayoutMain.cshtml";
+}
+<style>
+    th, td {
+        color: white;
+    }
+</style>
+<h2>GetCountries</h2>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+<p>
+    <a href="/Country/AddEditCountry" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CountryName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryName)
+            </td>
+            <td>
+                <a href="/Country/AddEditCountry?CoId=@item.CountryId" class="btn btn-success">Edit</a> |
+                <a href="/Country/GetCountryById?CoId=@item.CountryId" class="btn btn-info">Details</a> |
+                <a href="/Country/DeleteCountry?CoId=@item.CountryId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+
+</table>

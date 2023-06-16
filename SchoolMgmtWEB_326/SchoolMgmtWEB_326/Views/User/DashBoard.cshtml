@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "DashBoard";
+    Layout = "~/Views/Shared/LayoutMain.cshtml";
+}
+
+<style>
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        padding: 7px;
+    }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            cursor: pointer;
+            padding: 14px,16px;
+            transition: 0.3s;
+        }
+
+            .tab button:hover {
+                background-color: #ddd;
+            }
+
+            .tab button:active {
+                background-color: #ccc;
+            }
+
+    .tabcontent {
+        display: none;
+        padding-top: 4px;
+        padding-left: 10px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+</style>
+
+<h2>DashBoard</h2>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["User"] != null)
+{
+    <div class="alert alert-success">@TempData["User"]</div>
+}
+<div class="tab">
+    <button class="tablinks" onclick="getCount(event,'Users')" id="defaultOpen">User</button>
+    <button class="tablinks" onclick="getCount(event,'Students')">Students</button>
+    <button class="tablinks" onclick="getCount(event,'Teachers')">Teachers</button>
+    <button class="tablinks" onclick="getCount(event,'Subjects')">Subjects</button>
+</div>
+
+<div id="Users" class="tabcontent">
+    <h3>No. Of Users</h3>
+    <h2>@ViewBag.UserCount</h2>
+</div>
+
+<div id="Students" class="tabcontent">
+    <h3>No. Of Students</h3>
+    <h2>@ViewBag.StudentCount</h2>
+</div>
+
+<div id="Teachers" class="tabcontent">
+    <h3>No. Of Teachers</h3>
+    <h2>@ViewBag.TeacherCount</h2>
+</div>
+
+<div id="Subjects" class="tabcontent">
+    <h3>No. Of Subjects</h3>
+    <h2>@ViewBag.SubjectCount</h2>
+</div>
+
+<script>
+    document.getElementById("defaultOpen").click();
+    function getCount(event, actionName) {
+        var i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("active", "");
+        }
+
+        document.getElementById(actionName).style.display = "block";
+        event.currentTarget.className += "active";
+    }
+</script>

@@ -1,0 +1,25 @@
+﻿@model SchoolMgmtWEB_326.Models.Models.StateModel
+@{
+    ViewBag.Title = "GetStateById";
+    Layout = "~/Views/Shared/LayoutMain.cshtml";
+}
+<style>
+    th, td {
+        color: white;
+    }
+</style>
+<h2>GetStateById</h2>
+<table class="table">
+    <tr>
+        <th>CountryName</th>
+        <th>StateName</th>
+    </tr>
+    <tr>
+        <td>@Model.CountryName</td>
+        <td>@Model.StateName</td>
+    </tr>
+</table>
+<br />
+<div>
+    @Html.ActionLink("Back To List", "GetStates")
+</div>

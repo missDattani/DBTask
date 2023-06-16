@@ -1,0 +1,30 @@
+﻿@model SchoolMgmtWEB_326.Models.Models.UserModel 
+@{
+    ViewBag.Title = "GetUserDetail";
+    Layout = "~/Views/Shared/LayoutMain.cshtml";
+}
+<style>
+    th,td{
+        color:white;
+    }
+</style>
+<h2>GetUserById</h2>
+<table class="table">
+    <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>Role</th>
+    </tr>
+    <tr>
+        <td>@Model.FirstName</td>
+        <td>@Model.LastName</td>
+        <td>@Model.Email</td>
+        <td>@Model.Role</td>
+    </tr>
+</table>
+<br />
+<div>
+    @Html.ActionLink("Back To List","GetUsers")
+</div>
+

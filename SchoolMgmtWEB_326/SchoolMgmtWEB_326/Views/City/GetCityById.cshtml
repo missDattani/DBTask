@@ -1,0 +1,30 @@
+﻿@model SchoolMgmtWEB_326.Models.Models.CityModel
+@{
+    ViewBag.Title = "GetCityById";
+    Layout = "~/Views/Shared/LayoutMain.cshtml";
+}
+<style>
+    th, td {
+        color: white;
+    }
+</style>
+<h2>GetCityById</h2>
+<table class="table">
+    <tr>
+        <th>CityName</th>
+        <th>StateName</th>
+        <th>CountryName</th>
+
+    </tr>
+    <tr>
+        <td>@Model.CityName</td>
+        <td>@Model.StateName</td>
+        <td>@Model.CountryName</td>
+    </tr>
+</table>
+<br />
+<div>
+    @Html.ActionLink("Back To List", "GetCities")
+</div>
+
+

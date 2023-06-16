@@ -1,0 +1,25 @@
+﻿@model SchoolMgmtWEB_326.Models.Models.CountryModel
+@{
+    ViewBag.Title = "GetCountryById";
+    Layout = "~/Views/Shared/LayoutMain.cshtml";
+}
+<style>
+    th, td {
+        color: white;
+    }
+</style>
+<h2>GetCountryById</h2>
+<table class="table">
+    <tr>
+        <th>CountryName</th>
+      
+    </tr>
+    <tr>
+        <td>@Model.CountryName</td>
+    </tr>
+</table>
+<br />
+<div>
+    @Html.ActionLink("Back To List", "GetCountries")
+</div>
+

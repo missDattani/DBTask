@@ -1,0 +1,15 @@
+C:\Users\sit307\source\repos\QuizApplication\QuizApplication.Repositories\bin\Debug\QuizApplication.Repositories.dll.config
+C:\Users\sit307\source\repos\QuizApplication\QuizApplication.Repositories\bin\Debug\QuizApplication.Repositories.dll
+C:\Users\sit307\source\repos\QuizApplication\QuizApplication.Repositories\bin\Debug\QuizApplication.Repositories.pdb
+C:\Users\sit307\source\repos\QuizApplication\QuizApplication.Repositories\bin\Debug\EntityFramework.dll
+C:\Users\sit307\source\repos\QuizApplication\QuizApplication.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sit307\source\repos\QuizApplication\QuizApplication.Repositories\bin\Debug\QuizApplication.Models.dll
+C:\Users\sit307\source\repos\QuizApplication\QuizApplication.Repositories\bin\Debug\QuizApplication.Models.pdb
+C:\Users\sit307\source\repos\QuizApplication\QuizApplication.Repositories\bin\Debug\QuizApplication.Models.dll.config
+C:\Users\sit307\source\repos\QuizApplication\QuizApplication.Repositories\bin\Debug\EntityFramework.xml
+C:\Users\sit307\source\repos\QuizApplication\QuizApplication.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sit307\source\repos\QuizApplication\QuizApplication.Repositories\obj\Debug\QuizApplication.Repositories.csproj.AssemblyReference.cache
+C:\Users\sit307\source\repos\QuizApplication\QuizApplication.Repositories\obj\Debug\QuizApplication.Repositories.csproj.CoreCompileInputs.cache
+C:\Users\sit307\source\repos\QuizApplication\QuizApplication.Repositories\obj\Debug\QuizApplication.Repositories.csproj.CopyComplete
+C:\Users\sit307\source\repos\QuizApplication\QuizApplication.Repositories\obj\Debug\QuizApplication.Repositories.dll
+C:\Users\sit307\source\repos\QuizApplication\QuizApplication.Repositories\obj\Debug\QuizApplication.Repositories.pdb

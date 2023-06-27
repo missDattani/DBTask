@@ -1,0 +1,146 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class="container">
+    <form id="sendingEmail">
+        <br />
+        <input type="hidden" id="Id" />
+        To :
+        <input type="text" class="form-control" id="ToEmail" />
+        Subject :
+        <input type="text" class="form-control" id="Subject" />
+        Body :
+        <textarea rows="5" class="form-control" type="text" id="Message"> </textarea><br />
+        <button type="button" class="btn btn-primary" onclick="SendEmail()" id="addBtn"> Send Email</button>&nbsp;
+        <button type="button" class="btn btn-primary" onclick="EditEmail()" id="updateBtn"> Update Email</button>
+        <hr />
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>ToEmail</th>
+                    <th>Subject</th>
+                    <th>BodyMessage</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="EmailBody"> </tbody>
+        </table>
+    </form>
+</div>
+<script>
+    $(document).ready(function () {
+        LoadTable();
+        $("#updateBtn").hide();
+    })
+
+    function SendEmail() {
+      
+        var to = $("#ToEmail").val();
+        //console.log(to);
+        var subject = $("#Subject").val();
+        //console.log(subject);
+        var message = $("#Message").val();
+        //console.log(message);
+        $.ajax({
+            type: 'POST',
+            url: '/Email/InsertEmail?toEmail=' + to + "&&subject=" + subject + "&&body=" + message + "",
+            success: function (result) {
+                //console.log(result);
+                alert(result);
+                LoadTable();
+                $("#ToEmail").val('');
+                $("#Subject").val('');
+                $("#Message").val('');
+
+            },
+            error: function (result) {
+                alert(result);
+            }
+        })
+    }
+
+    function LoadTable() {
+        $("#EmailBody").html('');
+        $.ajax({
+            type: 'GET',
+            url: '/Email/LoadData',
+            success: function (res) {
+                console.log(res);
+                var row = "";
+                $.each(res, function (index, value) {
+                    row += `<tr><td>` + value.ToEmail + `</td><td>` + value.Subject + `</td><td>` + value.Body + `</td>
+                        <td><button type="button" class="btn btn-danger" data-id="` + value.Id + `" onclick="DeleteData(this)">Delete</button> | <button type="button" data-id="` + value.Id + `" class="btn btn-info" onclick="EditData(this)">Edit</button></td></tr>`;
+                });
+                //$("#EmailBody").find('tr:gt(0)').remove();
+                $("#EmailBody").append(row);
+            },
+            error: function () {
+                $("#EmailBody").html('');
+            }
+        })
+    }
+
+    function EditData(ele) {
+        $("#updateBtn").show();
+        $("#addBtn").hide();
+        var eId = $(ele).data('id');
+        $("#Id").val(eId);
+        console.log(eId);
+        $.ajax({
+            type: 'GET',
+            url: '/Email/GetEmailById?Id=' + eId,
+            success: function (res) {
+                console.log(res);
+                $("#ToEmail").val(res.ToEmail);
+                $("#Subject").val(res.Subject);
+                $("#Message").val(res.Body);
+            }
+
+        })
+    }
+
+    function DeleteData(ele) {
+        var eId = $(ele).data('id');
+        console.log(eId);
+        $.ajax({
+            type: 'POST',
+            url: '/Email/DeleteEmail?Id=' + eId,
+            success: function (result) {
+                //alert(result);
+                LoadTable();
+            },
+            error: function (result) {
+                alert(result);
+            }
+        })
+    }
+
+    function EditEmail() {
+        var rowId = $("#Id").val();
+        var to = $("#ToEmail").val();
+        //console.log(to);
+        var subject = $("#Subject").val();
+        //console.log(subject);
+        var message = $("#Message").val();
+        //console.log(message);
+        $.ajax({
+            type: 'POST',
+            url: '/Email/UpdateEmail?toEmail=' + to + "&&subject=" + subject + "&&body=" + message + "&&Id=" + rowId + "",
+            success: function (result) {
+                //console.log(result);
+                alert(result);
+                LoadTable();
+                $("#ToEmail").val('');
+                $("#Subject").val('');
+                $("#Message").val('');
+
+            },
+            error: function (result) {
+                alert(result);
+            }
+        })
+    }
+</script>

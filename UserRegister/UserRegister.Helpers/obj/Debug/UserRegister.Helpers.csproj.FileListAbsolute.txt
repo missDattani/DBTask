@@ -1,0 +1,12 @@
+C:\Users\sit307\source\repos\UserRegister\UserRegister.Helpers\bin\Debug\UserRegister.Helpers.dll
+C:\Users\sit307\source\repos\UserRegister\UserRegister.Helpers\bin\Debug\UserRegister.Helpers.pdb
+C:\Users\sit307\source\repos\UserRegister\UserRegister.Helpers\bin\Debug\UserRegister.Models.dll
+C:\Users\sit307\source\repos\UserRegister\UserRegister.Helpers\bin\Debug\EntityFramework.dll
+C:\Users\sit307\source\repos\UserRegister\UserRegister.Helpers\bin\Debug\UserRegister.Models.pdb
+C:\Users\sit307\source\repos\UserRegister\UserRegister.Helpers\bin\Debug\UserRegister.Models.dll.config
+C:\Users\sit307\source\repos\UserRegister\UserRegister.Helpers\bin\Debug\EntityFramework.xml
+C:\Users\sit307\source\repos\UserRegister\UserRegister.Helpers\obj\Debug\UserRegister.Helpers.csproj.AssemblyReference.cache
+C:\Users\sit307\source\repos\UserRegister\UserRegister.Helpers\obj\Debug\UserRegister.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\sit307\source\repos\UserRegister\UserRegister.Helpers\obj\Debug\UserRegister.Helpers.csproj.CopyComplete
+C:\Users\sit307\source\repos\UserRegister\UserRegister.Helpers\obj\Debug\UserRegister.Helpers.dll
+C:\Users\sit307\source\repos\UserRegister\UserRegister.Helpers\obj\Debug\UserRegister.Helpers.pdb

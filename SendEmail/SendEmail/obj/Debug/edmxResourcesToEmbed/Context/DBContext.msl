@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Pooja326MVCModelStoreContainer" CdmEntityContainer="Pooja326MVCEntities">
+    <EntitySetMapping Name="Tbl_Email">
+      <EntityTypeMapping TypeName="Pooja326MVCModel.Tbl_Email">
+        <MappingFragment StoreEntitySet="Tbl_Email">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ToEmail" ColumnName="ToEmail" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

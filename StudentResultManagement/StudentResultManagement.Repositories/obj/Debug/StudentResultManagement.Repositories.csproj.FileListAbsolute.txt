@@ -1,0 +1,17 @@
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\bin\Debug\StudentResultManagement.Repositories.dll.config
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\bin\Debug\StudentResultManagement.Repositories.dll
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\bin\Debug\StudentResultManagement.Repositories.pdb
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\bin\Debug\EntityFramework.dll
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\bin\Debug\StudentResultManagement.Helpers.dll
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\bin\Debug\StudentResultManagement.Models.dll
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\bin\Debug\StudentResultManagement.Helpers.pdb
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\bin\Debug\StudentResultManagement.Models.pdb
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\bin\Debug\StudentResultManagement.Models.dll.config
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\bin\Debug\EntityFramework.xml
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\obj\Debug\StudentResultManagement.Repositories.csproj.AssemblyReference.cache
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\obj\Debug\StudentResultManagement.Repositories.csproj.CoreCompileInputs.cache
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\obj\Debug\StudentResultManagement.Repositories.csproj.CopyComplete
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\obj\Debug\StudentResultManagement.Repositories.dll
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Repositories\obj\Debug\StudentResultManagement.Repositories.pdb

@@ -1,0 +1,332 @@
+﻿@model Register.Models.Models.UserModel
+@using Register.Helper.GlobalEnum
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    .errormessage{
+        display:none;
+        color:red;
+    }
+</style>
+
+@Scripts.Render("~/bundles/jqueryval")
+<div class="container">
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>UserModel</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+            <div class="form-group">
+                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @id = "txtFirstName" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                    <Span class="errormessage", id="errorFirstName">Please enter first name</Span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="form-check-inline form-check">
+                        @Html.RadioButton("Gender", "Male", false, new { id = "male", @class = "form-check-input" })
+                        @Html.Label("Male", "Male", new { @for = "male", @class = "form-check-label " })
+                        &nbsp; &nbsp;
+                        @Html.RadioButton("Gender", "Female", false, new { id = "female", @class = "form-check-input" })
+                        @Html.Label("Female", "Female", new { @for = "female", @class = "form-check-label " })
+                        &nbsp; &nbsp;
+                        @Html.RadioButton("Gender", "Other", false, new { id = "other", @class = "form-check-input" })
+                        @Html.Label("Other", "Other", new { @for = "other", @class = "form-check-label " })
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DOB, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.RoleName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Role, EnumHelper.GetSelectList(typeof(UserRoleType)), "--Select Role--", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MobileNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MobileNo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MobileNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Create" class="btn btn-default AddBtn" onclick="AddUserData()" id="addBtn" />&nbsp;
+                    <input type="button" value="Update" class="btn btn-default EditBtn" onclick="UpdateUserData()" id="EditBtn" />
+                </div>
+            </div>
+
+
+        </div>
+
+    }
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Address</th>
+                <th>Gender</th>
+                <th>DOB</th>
+                <th>Role</th>
+                <th>MobileNo</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="UserBody"></tbody>
+    </table>
+</div>
+
+
+
+<script>
+                $(document).ready(function () {
+                    LoadData();
+                })
+
+    function AddUserData() {
+        var isValid = true;
+        var txtFirstName = $("#txtFirstName").val();
+
+        if (txtFirstName == null || txtFirstName == undefined || txtFirstName == '') {
+            isValid = false;
+            $("#errorFirstName").show();
+        }
+        else {
+            $("#errorFirstName").hide();
+        }
+
+        if (isValid) {
+            var UserViewModel = {
+                Id: $("#Id").val(),
+                FirstName: $("#txtFirstName").val(),
+                LastName: $("#LastName").val(),
+                Address: $("#Address").val(),
+                Gender: $("input[type='radio']:checked").val(),
+                DOB: $("#DOB").val(),
+                Role: $("#Role").val(),
+                MobileNo: $("#MobileNo").val(),
+                Email: $("#Email").val(),
+                Password: $("#Password").val(),
+
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: '/User/AddUser',
+                data: JSON.stringify(UserViewModel),
+                dataType: 'JSON',
+                contentType: 'application/json; charset=utf-8',
+                success: function (res) {
+                    console.log(res);
+                    if (res) {
+                        alert("User Added Successfully");
+                        LoadData();
+                        $('form').trigger('reset');
+
+                    }
+
+                },
+                error: function () {
+                    alert("There is some problem");
+                }
+            });
+        }
+    }
+
+    function LoadData() {
+
+
+        $.ajax({
+            type: 'GET',
+            url: '/User/GetUser',
+            dataType: 'JSON',
+            contentType: 'application/json; charset=utf-8',
+            success: function (res) {
+                console.log(res);
+                var row = "";
+                $("#UserBody").html("");
+                $.each(res, function (i, value) {
+
+                    row += `<tr>
+                        <td>`+ value.FirstName + `</td>
+                        <td>`+ value.LastName + `</td>
+                        <td>` + value.Address + `</td>
+                        <td>` + value.Gender + `</td>
+                        <td>`+ value.DOBFormat + `</td>
+                        <td>`+ value.RoleName + `</td>
+                        <td>` + value.MobileNo + `</td>
+                        <td>` + value.Email + `</td>
+                        <td><button type="button" class="btn btn-primary" onclick="EditUser(`+ value.Id + `)">Edit</button>
+                        <button type="button" class="btn btn-danger" onclick="DeleteUser(`+ value.Id + `)">Delete</button></td>
+                        </tr>`
+                })
+
+                $("#UserBody").append(row);
+
+
+            },
+            error: function () {
+                alert("There is some problem");
+            }
+        })
+    }
+
+    function EditUser(Id) {
+        $.ajax({
+            type: 'GET',
+            url: '/User/EditUser?Id=' + Id,
+            data: { Id: Id },
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'JSON',
+            success: function (res) {
+                //console.log(res);
+                $("#Id").val(res.Id);
+                $("#txtFirstName").val(res.FirstName);
+                $("#LastName").val(res.LastName);
+                $("#Address").val(res.Address);
+                $("input[type='radio']:checked").val(res.Gender);
+                $("#DOB").val(res.DOBFormat);
+                $("#Role").val(res.Role);
+                $("#MobileNo").val(res.MobileNo);
+                $("#Email").val(res.Email);
+                $("#Password").val(res.Password);
+            },
+            error: function () {
+                alert("There is some problem");
+            }
+
+        });
+    }
+
+    function UpdateUserData() {
+
+        var UserViewModel = {
+            Id: $("#Id").val(),
+            FirstName: $("#txtFirstName").val(),
+            LastName: $("#LastName").val(),
+            Address: $("#Address").val(),
+            Gender: $("input[type='radio']:checked").val(),
+            DOB: $("#DOB").val(),
+            Role: $("#Role").val(),
+            MobileNo: $("#MobileNo").val(),
+            Email: $("#Email").val(),
+            Password: $("#Password").val()
+
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: '/User/EditUser',
+            data: JSON.stringify(UserViewModel),
+            dataType: 'JSON',
+            contentType: 'application/json; charset=utf-8',
+            success: function (res) {
+                console.log(res);
+                if (res) {
+                    alert("User Updated Successfully");
+                    LoadData();
+                    $('form').trigger('reset');
+
+                }
+
+            },
+            error: function () {
+                alert("There is some problem");
+            }
+        });
+    }
+
+        function DeleteUser(Id) {
+            var confirmData = confirm("Are you Sure Want to Delete??");
+            if (confirmData) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/User/DeleteUser',
+                    data: { Id: Id },
+                    dataType: 'JSON',
+                    success: function (res) {
+                        console.log(res);
+                        if (res) {
+                            alert("User Deleted Successfully");
+                            LoadData();
+                        } 
+                    },
+                    error: function () {
+                        alert("There is some problem");
+                    }
+                })
+            }
+        }
+
+</script>
+

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Pooja326MVCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Exams">
+    <Key>
+      <PropertyRef Name="ExamId" />
+    </Key>
+    <Property Name="ExamId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ExamName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="StudentMaster" Relationship="Self.FK__StudentMa__ExamI__5AEE82B9" FromRole="Exams" ToRole="StudentMaster" />
+  </EntityType>
+  <EntityType Name="StudentDetails">
+    <Key>
+      <PropertyRef Name="StdDetailId" />
+    </Key>
+    <Property Name="StdDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentId" Type="Int32" />
+    <Property Name="SubjectId" Type="Int32" />
+    <Property Name="TotalMarks" Type="Int32" />
+    <Property Name="MarksObtained" Type="Int32" />
+    <Property Name="Percentage" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="StudentMaster" Relationship="Self.FK__StudentDe__Stude__5BE2A6F2" FromRole="StudentDetails" ToRole="StudentMaster" />
+    <NavigationProperty Name="Subjects" Relationship="Self.FK__StudentDe__Subje__5CD6CB2B" FromRole="StudentDetails" ToRole="Subjects" />
+  </EntityType>
+  <EntityType Name="StudentMaster">
+    <Key>
+      <PropertyRef Name="StudentId" />
+    </Key>
+    <Property Name="StudentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExamId" Type="Int32" />
+    <Property Name="ClassName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RollNumber" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Exams" Relationship="Self.FK__StudentMa__ExamI__5AEE82B9" FromRole="StudentMaster" ToRole="Exams" />
+    <NavigationProperty Name="StudentDetails" Relationship="Self.FK__StudentDe__Stude__5BE2A6F2" FromRole="StudentMaster" ToRole="StudentDetails" />
+  </EntityType>
+  <EntityType Name="Subjects">
+    <Key>
+      <PropertyRef Name="SubjectId" />
+    </Key>
+    <Property Name="SubjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="StudentDetails" Relationship="Self.FK__StudentDe__Subje__5CD6CB2B" FromRole="Subjects" ToRole="StudentDetails" />
+  </EntityType>
+  <Association Name="FK__StudentMa__ExamI__5AEE82B9">
+    <End Role="Exams" Type="Self.Exams" Multiplicity="0..1" />
+    <End Role="StudentMaster" Type="Self.StudentMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Exams">
+        <PropertyRef Name="ExamId" />
+      </Principal>
+      <Dependent Role="StudentMaster">
+        <PropertyRef Name="ExamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StudentDe__Stude__5BE2A6F2">
+    <End Role="StudentMaster" Type="Self.StudentMaster" Multiplicity="0..1" />
+    <End Role="StudentDetails" Type="Self.StudentDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudentMaster">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="StudentDetails">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StudentDe__Subje__5CD6CB2B">
+    <End Role="Subjects" Type="Self.Subjects" Multiplicity="0..1" />
+    <End Role="StudentDetails" Type="Self.StudentDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subjects">
+        <PropertyRef Name="SubjectId" />
+      </Principal>
+      <Dependent Role="StudentDetails">
+        <PropertyRef Name="SubjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Pooja326MVCEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Exams" EntityType="Self.Exams" />
+    <EntitySet Name="StudentDetails" EntityType="Self.StudentDetails" />
+    <EntitySet Name="StudentMaster" EntityType="Self.StudentMaster" />
+    <EntitySet Name="Subjects" EntityType="Self.Subjects" />
+    <AssociationSet Name="FK__StudentMa__ExamI__5AEE82B9" Association="Self.FK__StudentMa__ExamI__5AEE82B9">
+      <End Role="Exams" EntitySet="Exams" />
+      <End Role="StudentMaster" EntitySet="StudentMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StudentDe__Stude__5BE2A6F2" Association="Self.FK__StudentDe__Stude__5BE2A6F2">
+      <End Role="StudentMaster" EntitySet="StudentMaster" />
+      <End Role="StudentDetails" EntitySet="StudentDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StudentDe__Subje__5CD6CB2B" Association="Self.FK__StudentDe__Subje__5CD6CB2B">
+      <End Role="Subjects" EntitySet="Subjects" />
+      <End Role="StudentDetails" EntitySet="StudentDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

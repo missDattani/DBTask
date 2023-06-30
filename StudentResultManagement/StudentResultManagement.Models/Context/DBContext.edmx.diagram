@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8aa184bc537e43e29eefac54ed63aa0f" Name="Diagram1">
+        <EntityTypeShape EntityType="Pooja326MVCModel.Exams" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pooja326MVCModel.StudentDetails" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pooja326MVCModel.StudentMaster" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pooja326MVCModel.Subjects" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="Pooja326MVCModel.FK__StudentMa__ExamI__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="Pooja326MVCModel.FK__StudentDe__Stude__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="Pooja326MVCModel.FK__StudentDe__Subje__5CD6CB2B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

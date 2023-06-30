@@ -1,0 +1,12 @@
+C:\Users\sit307\source\repos\Register\Register.Helper\bin\Debug\Register.Helper.dll
+C:\Users\sit307\source\repos\Register\Register.Helper\bin\Debug\Register.Helper.pdb
+C:\Users\sit307\source\repos\Register\Register.Helper\bin\Debug\Register.Models.dll
+C:\Users\sit307\source\repos\Register\Register.Helper\bin\Debug\EntityFramework.dll
+C:\Users\sit307\source\repos\Register\Register.Helper\bin\Debug\Register.Models.pdb
+C:\Users\sit307\source\repos\Register\Register.Helper\bin\Debug\Register.Models.dll.config
+C:\Users\sit307\source\repos\Register\Register.Helper\bin\Debug\EntityFramework.xml
+C:\Users\sit307\source\repos\Register\Register.Helper\obj\Debug\Register.Helper.csproj.AssemblyReference.cache
+C:\Users\sit307\source\repos\Register\Register.Helper\obj\Debug\Register.Helper.csproj.CoreCompileInputs.cache
+C:\Users\sit307\source\repos\Register\Register.Helper\obj\Debug\Register.Helper.csproj.CopyComplete
+C:\Users\sit307\source\repos\Register\Register.Helper\obj\Debug\Register.Helper.dll
+C:\Users\sit307\source\repos\Register\Register.Helper\obj\Debug\Register.Helper.pdb

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Pooja326MVCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Exams">
+    <Key>
+      <PropertyRef Name="ExamId" />
+    </Key>
+    <Property Name="ExamId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExamName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudentDetails">
+    <Key>
+      <PropertyRef Name="StdDetailId" />
+    </Key>
+    <Property Name="StdDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentId" Type="int" />
+    <Property Name="SubjectId" Type="int" />
+    <Property Name="TotalMarks" Type="int" />
+    <Property Name="MarksObtained" Type="int" />
+    <Property Name="Percentage" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="StudentMaster">
+    <Key>
+      <PropertyRef Name="StudentId" />
+    </Key>
+    <Property Name="StudentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="ExamId" Type="int" />
+    <Property Name="ClassName" Type="varchar" MaxLength="20" />
+    <Property Name="RollNumber" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Subjects">
+    <Key>
+      <PropertyRef Name="SubjectId" />
+    </Key>
+    <Property Name="SubjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubjectName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__StudentDe__Stude__5BE2A6F2">
+    <End Role="StudentMaster" Type="Self.StudentMaster" Multiplicity="0..1" />
+    <End Role="StudentDetails" Type="Self.StudentDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudentMaster">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="StudentDetails">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StudentDe__Subje__5CD6CB2B">
+    <End Role="Subjects" Type="Self.Subjects" Multiplicity="0..1" />
+    <End Role="StudentDetails" Type="Self.StudentDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subjects">
+        <PropertyRef Name="SubjectId" />
+      </Principal>
+      <Dependent Role="StudentDetails">
+        <PropertyRef Name="SubjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StudentMa__ExamI__5AEE82B9">
+    <End Role="Exams" Type="Self.Exams" Multiplicity="0..1" />
+    <End Role="StudentMaster" Type="Self.StudentMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Exams">
+        <PropertyRef Name="ExamId" />
+      </Principal>
+      <Dependent Role="StudentMaster">
+        <PropertyRef Name="ExamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Pooja326MVCModelStoreContainer">
+    <EntitySet Name="Exams" EntityType="Self.Exams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentDetails" EntityType="Self.StudentDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentMaster" EntityType="Self.StudentMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subjects" EntityType="Self.Subjects" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__StudentDe__Stude__5BE2A6F2" Association="Self.FK__StudentDe__Stude__5BE2A6F2">
+      <End Role="StudentMaster" EntitySet="StudentMaster" />
+      <End Role="StudentDetails" EntitySet="StudentDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StudentDe__Subje__5CD6CB2B" Association="Self.FK__StudentDe__Subje__5CD6CB2B">
+      <End Role="Subjects" EntitySet="Subjects" />
+      <End Role="StudentDetails" EntitySet="StudentDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StudentMa__ExamI__5AEE82B9" Association="Self.FK__StudentMa__ExamI__5AEE82B9">
+      <End Role="Exams" EntitySet="Exams" />
+      <End Role="StudentMaster" EntitySet="StudentMaster" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

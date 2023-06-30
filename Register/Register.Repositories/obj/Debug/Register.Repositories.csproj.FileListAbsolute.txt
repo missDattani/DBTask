@@ -1,0 +1,17 @@
+C:\Users\sit307\source\repos\Register\Register.Repositories\bin\Debug\Register.Repositories.dll.config
+C:\Users\sit307\source\repos\Register\Register.Repositories\bin\Debug\Register.Repositories.dll
+C:\Users\sit307\source\repos\Register\Register.Repositories\bin\Debug\Register.Repositories.pdb
+C:\Users\sit307\source\repos\Register\Register.Repositories\bin\Debug\EntityFramework.dll
+C:\Users\sit307\source\repos\Register\Register.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sit307\source\repos\Register\Register.Repositories\bin\Debug\Register.Helper.dll
+C:\Users\sit307\source\repos\Register\Register.Repositories\bin\Debug\Register.Models.dll
+C:\Users\sit307\source\repos\Register\Register.Repositories\bin\Debug\Register.Helper.pdb
+C:\Users\sit307\source\repos\Register\Register.Repositories\bin\Debug\Register.Models.pdb
+C:\Users\sit307\source\repos\Register\Register.Repositories\bin\Debug\Register.Models.dll.config
+C:\Users\sit307\source\repos\Register\Register.Repositories\bin\Debug\EntityFramework.xml
+C:\Users\sit307\source\repos\Register\Register.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sit307\source\repos\Register\Register.Repositories\obj\Debug\Register.Repositories.csproj.AssemblyReference.cache
+C:\Users\sit307\source\repos\Register\Register.Repositories\obj\Debug\Register.Repositories.csproj.CoreCompileInputs.cache
+C:\Users\sit307\source\repos\Register\Register.Repositories\obj\Debug\Register.Repositories.csproj.CopyComplete
+C:\Users\sit307\source\repos\Register\Register.Repositories\obj\Debug\Register.Repositories.dll
+C:\Users\sit307\source\repos\Register\Register.Repositories\obj\Debug\Register.Repositories.pdb

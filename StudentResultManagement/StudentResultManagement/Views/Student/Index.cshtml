@@ -1,0 +1,226 @@
+﻿@model StudentResultManagement.Models.Model.StudentModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
+
+<h2>Student Marks</h2>
+
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModel">Add New Result</button>
+
+<div class="modal fade" id="myModel" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Student Result</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.ClassName, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.ClassName, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.RollNumber, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.RollNumber, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.ExamId, new { @class = "control-label" })
+                            @Html.DropDownListFor(model => model.ExamId, new SelectList(Model.ListOfExams, "ExamId", "ExamName"), "--Select Exam--", new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h4 style="padding:20px;">Student Marks</h4>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            @Html.LabelFor(m => m.SubjectId, new { @class = "control-label" })
+                            @Html.DropDownListFor(model => model.SubjectId, new SelectList(Model.ListOfSubjects, "SubjectId", "SubjectName"), "--Select Subject--", new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @Html.LabelFor(m => m.TotalMarks, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.TotalMarks, new { htmlAttributes = new { @class = "form-control",@style="text-align:right" } })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @Html.LabelFor(m => m.MarksObtained, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.MarksObtained, new { htmlAttributes = new { @class = "form-control", @style = "text-align:right" } })
+                        </div>
+
+                        <div class="form-group" style="padding:20px;">
+                            <input type="button" value="Add To List" class="btn btn-danger" style="float: right;" id="AddBtn"/>
+                        </div>
+                    </div>
+                    <div class="row" style="padding:20px;">
+                        <table class="table table-bordered" id="StdTable" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Total Marks</th>
+                                    <th>Marks Obtained</th>
+                                    <th>Percentage</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" type="button" id="btnSave">Save</button>&nbsp;
+                <button class="btn btn-danger" type="button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Exam</th>
+                <th>Class Name</th>
+                <th>Roll Number</th>
+
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#AddBtn").click(function () {
+            AddMarks();
+        });
+        
+        $("#btnSave").click(function () {
+            AddMarksToDB();
+        });
+    });
+
+    function ResetMarksDetail() {
+        $("#Name").val("");
+        $("#ClassName").val("");
+        $("#ExamId").val("");
+        $("#RollNumber").val("");
+        $("#StdTable").find("tr:gt(0)").remove();
+        ResetMarksTableData();
+    }
+
+    function ResetMarksTableData() {
+        $("#SubjectId").val(1);
+        $("#TotalMarks").val("");
+        $("#MarksObtained").val("");
+    }
+
+    function AddMarks() {
+        if ($("#SubjectId option:selected").text() === "") {
+            alert("Please select Subject");
+            $("#SubjectId").focus();
+            return;
+        }
+
+        if ($("#TotalMarks").val() === "") {
+            alert("Please Enter Total Marks");
+            $("#TotalMarks").focus();
+            return;
+        }
+
+        if ($("#MarksObtained").val() === "") {
+            alert("Please Enter Marks Obtained");
+            $("#MarksObtained").focus();
+            return;
+        }
+
+        var subjectId = $("#SubjectId").val();
+        var tableMarks = $("#StdTable").find("tr:gt(0)");
+        var isReturn = false;
+        $.each(tableMarks, function () {
+            var listedSub = $(this).find("td:eq(0)").text();
+            var listSubText = $(this).find("td:eq(1)").text();
+            if (listedSub == subjectId) {
+                alert("Subject :" + listSubText + " " +"is already listed");
+                isReturn = true;
+                return;
+            }
+        });
+
+        if (isReturn == true) {
+            return false;
+        }
+
+        if (parseInt($("#TotalMarks").val()) < parseInt($("#MarksObtained").val())) {
+            alert("Marks Obtained Always Less than or equal to total marks");
+            $("#MarksObtained").focus();
+            return;
+        }
+
+        var markTable = $("#StdTable");
+        var subjectId = $("#SubjectId").val();
+        var Subjects = $("#SubjectId option:selected").text();
+        var totalmarks = $("#TotalMarks").val();
+        var markObtained = $("#MarksObtained").val();
+        var percentage = (parseInt(markObtained) / parseInt(totalmarks)) * 100;
+        var row = '<tr><td>' + subjectId + '</td><td>' + Subjects + '</td><td>' + totalmarks + '</td><td>' + markObtained + '</td><td>' + percentage + '</td><td><input type="button" class="btn btn-danger" value="Remove" onclick="removeMarks(this)"></td></tr>'
+        markTable.append(row);
+
+        ResetMarksTableData();
+    }
+
+    function AddMarksToDB() {
+        var obj = {};
+        var listofStudentMarks = [];
+        debugger
+      var table =  $("#StdTable").find("tr:gt(0)");
+        $.each(table, function () {
+            var studMarks = {};
+            studMarks.SubjectId = $(this).find("td:eq(0)").text();
+            studMarks.TotalMarks = $(this).find("td:eq(2)").text();
+            studMarks.MarksObtained = $(this).find("td:eq(3)").text();
+            studMarks.Percentage = $(this).find("td:eq(4)").text();
+            listofStudentMarks.push(studMarks);
+        });
+        obj.Name = $("#Name").val();
+        obj.ClassName = $("#ClassName").val();
+        obj.ExamId = $("#ExamId").val();
+        obj.RollNumber = $("#RollNumber").val();
+        obj.StudentDetailsList = listofStudentMarks;
+
+            $.ajax({
+                type: 'POST',
+                url: '/Student/Index',
+                data: JSON.stringify(obj),
+                dataType: 'JSON',
+                contentType: 'application/json charset=utf-8',
+                success: function (res) {
+                    console.log(res);
+                    if (res.status === true) {
+                        alert(res.message);
+                        ResetMarksDetail();
+                    }
+                },
+                error: function () {
+                    alert("There is some problem");
+                }
+            });
+    }
+
+    function removeMarks(rowId) {
+        $(rowId).closest('tr').remove();
+    }
+</script>
+

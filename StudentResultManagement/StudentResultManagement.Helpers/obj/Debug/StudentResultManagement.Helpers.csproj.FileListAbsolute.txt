@@ -1,0 +1,12 @@
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Helpers\bin\Debug\StudentResultManagement.Helpers.dll
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Helpers\bin\Debug\StudentResultManagement.Helpers.pdb
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Helpers\bin\Debug\StudentResultManagement.Models.dll
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Helpers\bin\Debug\EntityFramework.dll
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Helpers\bin\Debug\StudentResultManagement.Models.pdb
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Helpers\bin\Debug\StudentResultManagement.Models.dll.config
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Helpers\bin\Debug\EntityFramework.xml
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Helpers\obj\Debug\StudentResultManagement.Helpers.csproj.AssemblyReference.cache
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Helpers\obj\Debug\StudentResultManagement.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Helpers\obj\Debug\StudentResultManagement.Helpers.csproj.CopyComplete
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Helpers\obj\Debug\StudentResultManagement.Helpers.dll
+C:\Users\sit307\source\repos\StudentResultManagement\StudentResultManagement.Helpers\obj\Debug\StudentResultManagement.Helpers.pdb

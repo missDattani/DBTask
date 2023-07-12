@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SchoolSystem326.Model.ViewModels.CityModel>
+
+@{
+    ViewData["Title"] = "GetAllCities";
+}
+
+<h1>GetAllCities</h1>
+
+<p>
+    <a asp-action="AddEditCity">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+         
+            <th>
+                @Html.DisplayNameFor(model => model.CityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StateName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryName)
+            </th>
+       
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+    
+            <td>
+                @Html.DisplayFor(modelItem => item.CityName)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StateName)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryName)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Edit", "AddEditCity", new { Id=item.CityId }) |
+      @*          @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

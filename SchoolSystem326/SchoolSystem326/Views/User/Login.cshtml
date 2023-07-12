@@ -1,0 +1,42 @@
+﻿@model SchoolSystem326.Model.ViewModels.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+@if(TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+@if(TempData["Register"] != null)
+{
+    <div class="alert alert-success">@TempData["Register"]</div>
+}
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">
+           @Html.LabelFor(m=>m.Email,new{@class="control-label col-md-2"})
+           <div class="col-md-10">
+               @Html.EditorFor(m => m.Email,new{@class="form-control"})
+               @Html.ValidationMessageFor(m => m.Email,"",new{@class="text-danger"})
+           </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m=>m.Password,new{@class="control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.Password,new{@class="form-control"})
+                @Html.ValidationMessageFor(m => m.Password,"",new{@class="text-danger"})
+            </div>
+        </div>
+
+             <div class="form-group m-5">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </div>
+       
+    }
+</div>
+

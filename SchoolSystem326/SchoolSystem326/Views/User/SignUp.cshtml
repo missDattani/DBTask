@@ -1,0 +1,169 @@
+﻿@model SchoolSystem326.Model.ViewModels.UserModel
+@using SchoolSystem326.Model.ViewModels
+@{
+    ViewData["Title"] = "SignUp";
+}
+
+<h1>SignUp</h1>
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(m => m.Id)
+        <div class="form-group">
+            @Html.LabelFor(m => m.FirstName,new{@class="control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(m =>m.FirstName,new{@class="form-control"})
+                @Html.ValidationMessageFor(m => m.FirstName,"",new{@class="text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.LastName,new{@class="control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(m =>m.LastName,new{@class="form-control"})
+                @Html.ValidationMessageFor(m => m.LastName,"",new{@class="text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Address,new{@class="control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(m =>m.Address,new{@class="form-control"})
+                @Html.ValidationMessageFor(m => m.Address,"",new{@class="text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Gender,new{@class="control-label col-md-2"})
+            <div class="col-md-10 form-check-inline">
+                @Html.RadioButton("Gender","Male",new{@class="form-check-input"})
+                @Html.Label("Gender","Male",new{@class="form-check-label"})
+                @Html.RadioButton("Gender","Female",new{@class="form-check-input"})
+                @Html.Label("Gender","Female",new{@class="form-check-label"})
+                @Html.ValidationMessageFor(m => m.Gender,"",new{@class="text-danger"})
+            </div>
+        </div>
+
+            <div class="form-group">
+            @Html.LabelFor(m => m.DOB,new{@class="control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(m =>m.DOB,new{@class="form-control"})
+                @Html.ValidationMessageFor(m => m.DOB,"",new{@class="text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Role,new{@class="control-label col-md-2"})
+            <div class="col-md-10">
+                <select asp-for="Role" asp-items="Html.GetEnumSelectList<RoleType>()">
+                    <option selected="selected" value="">Select Role</option>
+                </select>
+                @Html.ValidationMessageFor(m => m.Role,"",new{@class="text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.MobileNo,new{@class="control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(m =>m.MobileNo,new{@class="form-control"})
+                @Html.ValidationMessageFor(m => m.MobileNo,"",new{@class="text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email,new{@class="control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(m =>m.Email,new{@class="form-control"})
+                @Html.ValidationMessageFor(m => m.Email,"",new{@class="text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password,new{@class="control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(m =>m.Password,new{@class="form-control"})
+                @Html.ValidationMessageFor(m => m.Password,"",new{@class="text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CountryName,new {@class="control-label col-md-2"})
+            <div class="col-md-10">
+                <select asp-for="CountryId" asp-items="@ViewBag.countryList">
+                    <option selected="selected" value="">Select Country</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.CountryId,"",new {@class="text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.StateName,new {@class="control-label col-md-2"})
+            <div class="col-md-10">
+                <select asp-for="StateId" asp-items="@ViewBag.stateList">
+                    <option selected="selected" value="">Select State</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.StateId,"",new {@class="text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CityName,new {@class="control-label col-md-2"})
+            <div class="col-md-10">
+                <select asp-for="CityId" asp-items="@ViewBag.cityList">
+                    <option selected="selected" value="">Select City</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.CityId,"",new {@class="text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group m-5">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#CountryId").change(function () {
+            $("#StateId").html("");
+            $("#StateId").append(`<option value="">--Select State--</option>`);
+            var CountryId = $("#CountryId").val();
+
+            $.ajax({
+                type: 'GET',
+                url: `/User/GetStatesByCountryId/${CountryId}`,
+                success: function (res) {
+                    console.log(res);
+                    res.forEach(e => {
+                        $("#StateId").append(`<option value="${e.stateId}">${e.stateName}</option>`);
+                    })
+                }
+            })
+
+        });
+
+        $("#StateId").change(function () {
+            $("#CityId").html("");
+            $("#CityId").append(`<option value="">--Select City--</option>`);
+            var StateId = $("#StateId").val();
+
+            $.ajax({
+                type: 'GET',
+                url: `/User/GetCityByStateId/${StateId}`,
+                success: function (res) {
+                    console.log(res);
+                    res.forEach(e => {
+                        $("#CityId").append(`<option value="${e.cityId}">${e.cityName}</option>`);
+                    })
+                }
+            })
+
+        });
+    })
+</script>

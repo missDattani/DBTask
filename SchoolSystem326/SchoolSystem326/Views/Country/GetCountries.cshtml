@@ -1,0 +1,23 @@
+﻿@model IEnumerable<SchoolSystem326.Model.ViewModels.CountryModel>
+@{
+    ViewData["Title"] = "GetCountries";
+}
+
+<h1>GetCountries</h1>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Countryname</th>
+            </tr>
+        </thead>
+        @foreach(var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td>@item.CountryName</td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>

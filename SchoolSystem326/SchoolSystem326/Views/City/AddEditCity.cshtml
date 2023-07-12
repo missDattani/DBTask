@@ -1,0 +1,62 @@
+﻿@model SchoolSystem326.Model.ViewModels.CityModel
+@{
+    ViewData["Title"] = "AddEditCity";
+}
+
+<h1>AddEditCity</h1>
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.CityId)
+        <div class="form-group">
+            @Html.LabelFor(model => model.CountryName,new {@class="control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CountryId,ViewBag.countryList as SelectList,"--Select Country--",new {@class="form-control",id="Country"})
+                @Html.ValidationMessageFor(model => model.CountryId,"",new {@class="text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.StateName,new {@class="control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.StateId,ViewBag.stateList as SelectList,"--Select State--",new {@class="form-control",id="State"})
+                @Html.ValidationMessageFor(model => model.StateId,"",new {@class="text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CityName,new {@class="control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CityName,new {htmlAttribute = new {@class="form-control"}})
+                @Html.ValidationMessageFor(model => model.CityName,"",new {@class="text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group m-5">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    }
+</div>
+<script>
+    $(document).ready(function(){
+        $("#Country").change(function () {
+            $("#State").html("");
+            $("#State").append(`<option value="">--Select State--</option>`);
+            var CountryId = $("#Country").val();
+
+            $.ajax({
+                type:'GET',
+                url: `/City/GetStatesByCountryId/${CountryId}`,
+                success : function(res){
+                    console.log(res);
+                    res.forEach(e => {
+                        $("#State").append(`<option value="${e.stateId}">${e.stateName}</option>`);
+                    })
+                }
+            })
+
+        })
+    })
+</script>

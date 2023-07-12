@@ -1,0 +1,25 @@
+﻿@model SchoolSystem326.Model.ViewModels.CountryModel
+@{
+    ViewData["Title"] = "AddEditCountry";
+}
+
+<h1>AddEditCountry</h1>
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(m => m.CountryId)
+        <div class="form-group">
+            @Html.LabelFor(m => m.CountryName,new{@class="control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.CountryName,new{@class="form-control"})
+                @Html.ValidationMessageFor(m => m.CountryName,"",new{@class="text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group m-5">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    }
+</div>

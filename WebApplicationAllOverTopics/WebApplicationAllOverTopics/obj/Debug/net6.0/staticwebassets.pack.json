@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\WebApplicationAllOverTopics\\WebApplicationAllOverTopics\\wwwroot\\ExceptionLogs\\Exception_19_07_2023.txt",
+      "PackagePath": "staticwebassets\\ExceptionLogs\\Exception_19_07_2023.txt"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\WebApplicationAllOverTopics\\WebApplicationAllOverTopics\\wwwroot\\ReqResLogs\\Log_18_07_2023.txt",
+      "PackagePath": "staticwebassets\\ReqResLogs\\Log_18_07_2023.txt"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\WebApplicationAllOverTopics\\WebApplicationAllOverTopics\\wwwroot\\ReqResLogs\\Log_19_07_2023.txt",
+      "PackagePath": "staticwebassets\\ReqResLogs\\Log_19_07_2023.txt"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.WebApplicationAllOverTopics.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.WebApplicationAllOverTopics.props",
+      "PackagePath": "build\\WebApplicationAllOverTopics.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.WebApplicationAllOverTopics.props",
+      "PackagePath": "buildMultiTargeting\\WebApplicationAllOverTopics.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.WebApplicationAllOverTopics.props",
+      "PackagePath": "buildTransitive\\WebApplicationAllOverTopics.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

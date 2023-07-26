@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "Hash": "MaOcm0Jaj2bx40vCHvy8naM+JJxdlRV4Ul637qgArto=",
+  "Source": "WebApplicationAllOverTopics",
+  "BasePath": "_content/WebApplicationAllOverTopics",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebApplicationAllOverTopics\\wwwroot",
+      "Source": "WebApplicationAllOverTopics",
+      "ContentRoot": "C:\\Users\\sit307\\source\\repos\\WebApplicationAllOverTopics\\WebApplicationAllOverTopics\\wwwroot\\",
+      "BasePath": "_content/WebApplicationAllOverTopics",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\sit307\\source\\repos\\WebApplicationAllOverTopics\\WebApplicationAllOverTopics\\wwwroot\\ExceptionLogs\\Exception_19_07_2023.txt",
+      "SourceId": "WebApplicationAllOverTopics",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sit307\\source\\repos\\WebApplicationAllOverTopics\\WebApplicationAllOverTopics\\wwwroot\\",
+      "BasePath": "_content/WebApplicationAllOverTopics",
+      "RelativePath": "ExceptionLogs/Exception_19_07_2023.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ExceptionLogs\\Exception_19_07_2023.txt"
+    },
+    {
+      "Identity": "C:\\Users\\sit307\\source\\repos\\WebApplicationAllOverTopics\\WebApplicationAllOverTopics\\wwwroot\\ReqResLogs\\Log_18_07_2023.txt",
+      "SourceId": "WebApplicationAllOverTopics",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sit307\\source\\repos\\WebApplicationAllOverTopics\\WebApplicationAllOverTopics\\wwwroot\\",
+      "BasePath": "_content/WebApplicationAllOverTopics",
+      "RelativePath": "ReqResLogs/Log_18_07_2023.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ReqResLogs\\Log_18_07_2023.txt"
+    },
+    {
+      "Identity": "C:\\Users\\sit307\\source\\repos\\WebApplicationAllOverTopics\\WebApplicationAllOverTopics\\wwwroot\\ReqResLogs\\Log_19_07_2023.txt",
+      "SourceId": "WebApplicationAllOverTopics",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sit307\\source\\repos\\WebApplicationAllOverTopics\\WebApplicationAllOverTopics\\wwwroot\\",
+      "BasePath": "_content/WebApplicationAllOverTopics",
+      "RelativePath": "ReqResLogs/Log_19_07_2023.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ReqResLogs\\Log_19_07_2023.txt"
+    }
+  ]
+}

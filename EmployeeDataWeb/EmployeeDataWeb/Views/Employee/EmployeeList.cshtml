@@ -1,0 +1,145 @@
+﻿@model IEnumerable<EmployeeDataWeb.Model.ViewModels.Employee.EmployeeModel>
+
+@{
+    ViewData["Title"] = "EmployeeList";
+}
+<style>
+    .colored-toast.swal2-icon-success {
+        background-color: #a5dc86 !important;
+    }
+
+    .colored-toast.swal2-icon-error {
+        background-color: #f27474 !important;
+    }
+</style>
+
+
+<h2>EmployeeList</h2>
+
+<p>
+    <a asp-action="AddEmployee" class="btn btn-primary">Create New</a>
+</p>
+<table class="table" id="myTable">
+    <thead>
+        <tr>
+    
+            <th>
+           EmpURN
+            </th>
+            <th>
+               EmployeeName
+            </th>
+            <th>
+               Email
+            </th>
+            <th>
+           Location
+            </th>
+
+            <th>
+              EmployeeCode
+            </th>
+  
+            <th>
+             DeptName
+            </th>
+            <th>
+              Name
+            </th>
+            <th>
+               CompanyName
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+</table>
+<script>
+    $(document).ready(function(){
+         var table = $('#myTable').DataTable({
+             "processing": true,
+             "serverSide": true,
+             "ajax":{
+                url: "/Employee/GetEmployees",
+                type : "POST"
+             },
+            "pageLength": 3,
+            "lengthMenu": [3, 5, 10, 20, 50],
+             "columns":[
+                     { data: "empURN" },
+                     { data: "employeeName" },
+                     { data: "email" },
+                     { data : "location"},
+                     { data: "employeeCode" },
+                     { data: "deptName" },
+                     { data: "name" },
+                     { data: "companyName" },
+                     {data : "empId",
+                            "render" : function(data){
+                    return `<a hred="/Employee/EditEmployee/${data}" class="btn btn-primary">Edit</a><a href="/Employee/DeleteEmployee/${data}" class="btn btn-danger" onclick=DeleteEmployee(${data})>Delete</a>`;
+                            }}
+             ]
+         });
+    });
+
+    function DeleteEmployee(e){
+        if(confirm("Are you sure want to Delete?")){
+            location.href = `@Url.Action("DeleteEmployee", "Employee")?id=${e}`;
+        }
+    }
+</script>
+@{
+    if (TempData["Message"] != null)
+    {
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                iconColor: 'white',
+                customClass: {
+                    popup: 'colored-toast'
+                },
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+
+
+            Toast.fire({
+                title: '@TempData["Message"]',
+                icon: 'success',
+            })
+        </script>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                iconColor: 'white',
+                customClass: {
+                    popup: 'colored-toast'
+                },
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+
+
+            Toast.fire({
+                title: '@TempData["Error"]',
+                icon: 'error',
+            })
+        </script>
+    }
+}

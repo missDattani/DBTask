@@ -1,0 +1,175 @@
+﻿@model EmployeeDataWeb.Model.ViewModels.Employee.EmployeeModel
+
+@{
+    ViewData["Title"] = "AddEmployee";
+}
+<style>
+    .colored-toast.swal2-icon-error {
+        background-color: #f27474 !important;
+    }
+</style>
+<h2>AddEmployee</h2>
+
+<h4>EmployeeModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="AddEmployee">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+  <div class="row">
+            <div class="form-group col-md-6">
+                <label asp-for="EmployeeName" class="control-label"></label>
+                <input asp-for="EmployeeName" class="form-control" />
+                <span asp-validation-for="EmployeeName" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+  </div>
+  <div class="row">           
+            <div class="form-group col-md-6">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="EmployeeCode" class="control-label"></label>
+                    <input asp-for="EmployeeCode" class="form-control" />
+                    <span asp-validation-for="EmployeeCode" class="text-danger"></span>
+                </div>
+
+  </div>
+  <div class="row">
+            <div class="form-group col-md-4">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <select asp-for="CompanyId"  class="form-control">
+                    <option>--Select Company--</option>
+                </select>
+                <span asp-validation-for="CompanyId" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="DeptName" class="control-label"></label>
+               <select asp-for="DeptId"  class="form-control">
+                   <option>--Select Department--</option>
+               </select>
+                <span asp-validation-for="DeptId" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="Name" class="control-label"></label>
+                <select asp-for="JobRoleId"  class="form-control">
+                    <option>--Select JobRole</option>
+                </select>
+                <span asp-validation-for="JobRoleId" class="text-danger"></span>
+            </div>
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (TempData["Error"] != null)
+{
+    <script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+
+
+
+        Toast.fire({
+            title: '@TempData["Error"]',
+            icon: 'error',
+        })
+    </script>
+}
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            method: "GET",
+            url: "/Company/GetCompanyList",
+            success: function (res) {
+                var data = JSON.parse(res);
+                $("#CompanyId").empty();
+                $("#CompanyId").append(`<option value="">--Select Company--</option>`);
+                data.forEach(ele => {
+                    $("#CompanyId").append(`<option value="${ele.CompanyId}">${ele.CompanyName}</option>`)
+                });
+            }
+        });
+
+        $("#CompanyId").change(function () {
+            var companyId = $("#CompanyId").val();
+            if (companyId == "") {
+                $("#DeptId").empty();
+                $("#JobRoleId").empty();
+                return;
+            }
+            else {
+                $.ajax({
+                    method: "GET",
+                    url: "/Department/GetDeptByCompanyId?Id=" + companyId,
+                    success: function (res) {
+                        var data = JSON.parse(res);
+                        // console.log(data);
+                        $("#DeptId").empty();
+                        $("#DeptId").append(`<option value="">--Select Department--</option>`);
+                        data.forEach(ele => {
+                            $("#DeptId").append(`<option value="${ele.DeptId}">${ele.DeptName}</option>`)
+                        });
+                    }
+                });
+            }
+        });
+
+        $("#DeptId").change(function () {
+            var depatmentId = $("#DeptId").val();
+            if (depatmentId == "") {
+                $("#JobRoleId").empty();
+                return;
+            }
+            else {
+                $.ajax({
+                    method: "GET",
+                    url: "/JobRole/GetJobRoleByDeptId?Id=" + depatmentId,
+                    success: function (res) {
+                        console.log(res)
+                        var data = JSON.parse(res);
+                        console.log(data);
+                        $("#JobRoleId").empty();
+                        $("#JobRoleId").append(`<option value="">--Select JobRole--</option>`);
+                        data.forEach(ele => {
+                            $("#JobRoleId").append(`<option value="${ele.JobRoleId}">${ele.Name}</option>`)
+                        });
+                    }
+                });
+
+                //fetch("/JobRole/GetJobRoleByDeptId?Id=" + depatmentId)
+                //.then(res=>res)
+                //.then(data=>{
+                //    console.log(data);
+                //})
+                //.catch(ex=>console.log(ex));
+            }
+        });
+
+    })
+</script>
+
+

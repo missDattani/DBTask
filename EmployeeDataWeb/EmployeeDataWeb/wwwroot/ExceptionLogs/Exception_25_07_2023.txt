@@ -1,0 +1,26 @@
+
+----------25/07/2023 12:14:52 PM------------
+Request Url:/Employee/EmployeeList
+Error Message : Unexpected character encountered while parsing value: d. Path '', line 0, position 0.
+InnerException :
+StackStrace:   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at EmployeeDataWeb.Services.JwtAuthenticationServices.JwtAuthServices.GetUserTokenData(String jwttoken) in C:\Users\sit307\source\repos\EmployeeDataWeb\EmployeeDataWeb.Services\JwtAuthenticationServices\JwtAuthServices.cs:line 47
+   at EmployeeDataWeb.Middleware.CustomMiddleware.Invoke(HttpContext context, IUserServices userServices) in C:\Users\sit307\source\repos\EmployeeDataWeb\EmployeeDataWeb\Middleware\CustomMiddleware.cs:line 62
+
+----------25/07/2023 12:14:53 PM------------
+Request Url:/
+Error Message : Unexpected character encountered while parsing value: d. Path '', line 0, position 0.
+InnerException :
+StackStrace:   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at EmployeeDataWeb.Services.JwtAuthenticationServices.JwtAuthServices.GetUserTokenData(String jwttoken) in C:\Users\sit307\source\repos\EmployeeDataWeb\EmployeeDataWeb.Services\JwtAuthenticationServices\JwtAuthServices.cs:line 47
+   at EmployeeDataWeb.Middleware.CustomMiddleware.Invoke(HttpContext context, IUserServices userServices) in C:\Users\sit307\source\repos\EmployeeDataWeb\EmployeeDataWeb\Middleware\CustomMiddleware.cs:line 62

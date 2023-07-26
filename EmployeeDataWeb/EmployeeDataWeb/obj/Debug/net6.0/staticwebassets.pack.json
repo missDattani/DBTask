@@ -1,0 +1,545 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\EmployeeDataWeb.bundle.scp.css",
+      "PackagePath": "staticwebassets\\EmployeeDataWeb.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\ExceptionLogs\\Exception_25_07_2023.txt",
+      "PackagePath": "staticwebassets\\ExceptionLogs\\Exception_25_07_2023.txt"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\ReqResLogs\\Log_24-07-2023.txt",
+      "PackagePath": "staticwebassets\\ReqResLogs\\Log_24-07-2023.txt"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\ReqResLogs\\Log_25-07-2023.txt",
+      "PackagePath": "staticwebassets\\ReqResLogs\\Log_25-07-2023.txt"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\Theme\\css\\Style.css",
+      "PackagePath": "staticwebassets\\Theme\\css\\Style.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\css\\animate.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\animate.min.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\css\\demo.css",
+      "PackagePath": "staticwebassets\\assets\\css\\demo.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\css\\light-bootstrap-dashboard.css",
+      "PackagePath": "staticwebassets\\assets\\css\\light-bootstrap-dashboard.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\css\\pe-icon-7-stroke.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pe-icon-7-stroke.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\fonts\\Pe-icon-7-stroke.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Pe-icon-7-stroke.eot"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\fonts\\Pe-icon-7-stroke.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Pe-icon-7-stroke.svg"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\fonts\\Pe-icon-7-stroke.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Pe-icon-7-stroke.ttf"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\fonts\\Pe-icon-7-stroke.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Pe-icon-7-stroke.woff"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\default-avatar.png",
+      "PackagePath": "staticwebassets\\assets\\img\\default-avatar.png"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\faces\\face-0.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\faces\\face-0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\faces\\face-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\faces\\face-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\faces\\face-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\faces\\face-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\faces\\face-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\faces\\face-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\faces\\face-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\faces\\face-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\faces\\face-5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\faces\\face-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\faces\\face-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\faces\\face-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\faces\\face-7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\faces\\face-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\faces\\tim_vector.jpe",
+      "PackagePath": "staticwebassets\\assets\\img\\faces\\tim_vector.jpe"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\favicon.ico",
+      "PackagePath": "staticwebassets\\assets\\img\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\full-screen-image-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\full-screen-image-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\loading-bubbles.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\loading-bubbles.svg"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\mask.png",
+      "PackagePath": "staticwebassets\\assets\\img\\mask.png"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\new_logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\new_logo.png"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\sidebar-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sidebar-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\sidebar-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sidebar-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\sidebar-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sidebar-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\sidebar-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sidebar-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\sidebar-5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sidebar-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\img\\tim_80x80.png",
+      "PackagePath": "staticwebassets\\assets\\img\\tim_80x80.png"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\js\\bootstrap-notify.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap-notify.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\js\\bootstrap-select.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap-select.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\js\\chartist.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\chartist.min.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\js\\demo.js",
+      "PackagePath": "staticwebassets\\assets\\js\\demo.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\js\\jquery.3.2.1.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.3.2.1.min.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\js\\light-bootstrap-dashboard.js",
+      "PackagePath": "staticwebassets\\assets\\js\\light-bootstrap-dashboard.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\_alerts.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\_alerts.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\_buttons.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\_cards.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\_cards.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\_chartist.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\_chartist.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\_checkbox-radio-switch.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\_checkbox-radio-switch.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\_dropdown.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\_footers.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\_footers.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\_inputs.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\_inputs.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\_misc.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\_misc.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\_mixins.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\_mixins.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\_navbars.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\_navbars.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\_responsive.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\_responsive.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\_sidebar-and-main-panel.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\_sidebar-and-main-panel.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\_tables.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\_tables.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\_typography.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\_typography.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\_variables.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\mixins\\_cards.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\mixins\\_cards.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\mixins\\_chartist.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\mixins\\_chartist.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\mixins\\_icons.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\mixins\\_icons.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\mixins\\_inputs.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\mixins\\_inputs.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\mixins\\_labels.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\mixins\\_labels.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\mixins\\_morphing-buttons.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\mixins\\_morphing-buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\mixins\\_navbars.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\mixins\\_navbars.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\mixins\\_social-buttons.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\mixins\\_social-buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\mixins\\_tabs.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\mixins\\_tabs.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\mixins\\_transparency.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\mixins\\_transparency.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\lbd\\mixins\\_vendor-prefixes.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\lbd\\mixins\\_vendor-prefixes.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\assets\\sass\\light-bootstrap-dashboard.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\light-bootstrap-dashboard.scss"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\sit307\\source\\repos\\EmployeeDataWeb\\EmployeeDataWeb\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.EmployeeDataWeb.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.EmployeeDataWeb.props",
+      "PackagePath": "build\\EmployeeDataWeb.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.EmployeeDataWeb.props",
+      "PackagePath": "buildMultiTargeting\\EmployeeDataWeb.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.EmployeeDataWeb.props",
+      "PackagePath": "buildTransitive\\EmployeeDataWeb.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

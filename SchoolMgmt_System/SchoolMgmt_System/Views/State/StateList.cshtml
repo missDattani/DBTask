@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SchoolMgmt_System.Model.ViewModels.StateModel>
+
+@{
+    ViewData["Title"] = "StateList";
+}
+
+<h1>StateList</h1>
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+<p>
+    <a asp-action="AddEditState">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StateName)
+            </th>
+          @*  <th>
+                @Html.DisplayNameFor(model => model.CoId)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.CountryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StateName)
+            </td>
+       @*     <td>
+                @Html.DisplayFor(modelItem => item.CoId)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "AddEditState", new { Id=item.StId }) |
+                    @Html.ActionLink("Details", "GetStateById", new { Id=item.StId }) |
+                    @Html.ActionLink("Delete", "DeleteState", new { Id=item.StId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

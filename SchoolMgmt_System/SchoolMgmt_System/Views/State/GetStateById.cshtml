@@ -1,0 +1,42 @@
+﻿@model SchoolMgmt_System.Model.ViewModels.StateModel
+
+@{
+    ViewData["Title"] = "GetStateById";
+}
+
+<h1>GetStateById</h1>
+
+<div>
+    <h4>StateModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StateName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StateName)
+        </dd>
+@*        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CoId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CoId)
+        </dd>*@
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CountryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CountryName)
+        </dd>
+    </dl>
+</div>
+<div>
+
+    <a asp-action="StateList">Back to List</a>
+</div>

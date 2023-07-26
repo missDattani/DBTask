@@ -1,0 +1,6 @@
+C:\Users\sit307\source\repos\SchoolMgmt_System\SchoolMgmt_System.Model\obj\Debug\SchoolMgmt_System.Model.csproj.AssemblyReference.cache
+C:\Users\sit307\source\repos\SchoolMgmt_System\SchoolMgmt_System.Model\obj\Debug\SchoolMgmt_System.Model.csproj.CoreCompileInputs.cache
+C:\Users\sit307\source\repos\SchoolMgmt_System\SchoolMgmt_System.Model\bin\Debug\SchoolMgmt_System.Model.dll
+C:\Users\sit307\source\repos\SchoolMgmt_System\SchoolMgmt_System.Model\bin\Debug\SchoolMgmt_System.Model.pdb
+C:\Users\sit307\source\repos\SchoolMgmt_System\SchoolMgmt_System.Model\obj\Debug\SchoolMgmt_System.Model.dll
+C:\Users\sit307\source\repos\SchoolMgmt_System\SchoolMgmt_System.Model\obj\Debug\SchoolMgmt_System.Model.pdb

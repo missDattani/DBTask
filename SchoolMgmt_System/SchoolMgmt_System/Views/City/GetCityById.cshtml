@@ -1,0 +1,54 @@
+﻿@model SchoolMgmt_System.Model.ViewModels.CityModel
+
+@{
+    ViewData["Title"] = "GetCityById";
+}
+
+<h1>GetCityById</h1>
+
+<div>
+    <h4>CityModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CiId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CiId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CityName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CityName)
+        </dd>
+ @*       <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CoId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CoId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StId)
+        </dd>*@
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CountryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CountryName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StateName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StateName)
+        </dd>
+    </dl>
+</div>
+<div>
+
+    <a asp-action="CityList">Back to List</a>
+</div>

@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.9" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="7.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.14" />
+    <PackageReference Include="MimeKit" Version="4.1.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.31.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SchoolMgmt_System.Common\SchoolMgmt_System.Common.csproj" />
+    <ProjectReference Include="..\SchoolMgmt_System.Data\SchoolMgmt_System.Data.csproj" />
+    <ProjectReference Include="..\SchoolMgmt_System.Model\SchoolMgmt_System.Model.csproj" />
+    <ProjectReference Include="..\SchoolMgmt_System.Services\SchoolMgmt_System.Services.csproj" />
+  </ItemGroup>
+
+</Project>

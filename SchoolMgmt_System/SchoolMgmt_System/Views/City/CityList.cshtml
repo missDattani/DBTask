@@ -1,0 +1,73 @@
+﻿@model IEnumerable<SchoolMgmt_System.Model.ViewModels.CityModel>
+
+@{
+    ViewData["Title"] = "StateList";
+}
+
+<h1>StateList</h1>
+@if (TempData["Register"] != null)
+{
+    <div class="alert alert-success">@TempData["Register"]</div>
+}
+@if (TempData["Update"] != null)
+{
+    <div class="alert alert-success">@TempData["Update"]</div>
+}
+ 
+<p>
+    <a asp-action="AddEditCity">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CiId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CityName)
+            </th>
+      @*      <th>
+                @Html.DisplayNameFor(model => model.CoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StId)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.CountryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StateName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CiId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CityName)
+            </td>
+@*            <td>
+                @Html.DisplayFor(modelItem => item.CoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StId)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StateName)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "AddEditCity", new { Id=item.CiId  }) |
+                    @Html.ActionLink("Details", "GetCityById", new { Id=item.CiId }) |
+                    @*@Html.ActionLink("Delete", "Delete", new { Id=item.CiId  })*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

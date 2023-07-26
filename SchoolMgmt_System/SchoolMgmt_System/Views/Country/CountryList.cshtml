@@ -1,0 +1,75 @@
+﻿@model IEnumerable<SchoolMgmt_System.Model.ViewModels.CountryModel>
+
+@{
+    ViewData["Title"] = "CountryList";
+}
+
+<h1>CountryList</h1>
+@if(ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+<p>
+    @*<a asp-action="AddEditCountry">Create New</a>*@
+    <a href="/Country/AddEditCountry/" class="btn btn-outline-primary">Create New</a>
+</p>
+<table class="table" id="CoTable">
+    <thead>
+        <tr>
+      @*      <th>
+                @Html.DisplayNameFor(model => model.CoId)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.CountryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+@*    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "AddEditCountry", new { Id=item.CoId }) |
+                    @Html.ActionLink("Details", "GetCountryById", new { Id=item.CoId }) |
+                @Html.ActionLink("Delete", "DeleteCountry", new { Id=item.CoId })
+            </td>
+        </tr>
+}
+    </tbody>*@
+</table>
+
+<script>
+    $(document).ready(function(){
+        $("#CoTable").DataTable({
+            "processing":true,
+            "serverSide":true,
+            "ajax":{
+                url: "/Country/GetCountries",
+                type:"POST"
+            },
+            "pageLength":3,
+            "lengthMenu" : [3, 5, 10, 20, 50, 100],
+            "columns": [
+
+                {data:"countryName"},
+                {
+                    data:"coId",
+                        "render":function(data){
+                        return `<a href="/Country/AddEditCountry/${data}" class="btn btn-outline-primary">Edit</a>  <button href="" class = "btn btn-outline-danger" onclick=DeleteEmployee(${data})>Delete</button>`;
+                        }}
+            ]
+        });
+    })
+
+    function DeleteEmployee(e) {
+        if (confirm("Are You Sure Want to Delete?")) {
+            location.href = `@Url.Action("DeleteCountry", "Country")?id=${e}`;
+        }
+    }
+</script>

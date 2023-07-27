@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <style>
+        .colored-toast.swal2-icon-error {
+            background-color: #f27474 !important;
+        }
+
+            .colored-toast.swal2-icon-success {
+                    background-color: #a5dc86 !important;
+                }
+    </style>
+
+
+<div class="col-md-12">
+    <div class="container text-center">
+
+    <h1 class="display-4">Welcome</h1>
+    </div>
+
+</div>
+
+@if (TempData["Message"] != null)
+{
+    <script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+
+
+
+        Toast.fire({
+            title: '@TempData["Message"]',
+            icon: 'success',
+        })
+    </script>
+}
+

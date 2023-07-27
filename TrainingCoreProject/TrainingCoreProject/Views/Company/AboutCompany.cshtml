@@ -1,0 +1,76 @@
+﻿@model TrainingCoreProject.Model.ViewModels.Company.CompanyModel
+
+@{
+    ViewData["Title"] = "AboutCompany";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div class="row" style="width:70%; margin-left:250px;">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 style="margin-top:20px;">About Company</h5>
+                <dl class="row float-right">
+
+                    <div class="profile-image ">
+                        @if (TempData["Image"] != null)
+                        {
+                            <img src="~/companylogos/@TempData["Image"]" />
+                        }
+                        else
+                        {
+                            <img src="~/companylogos/@Model.Image" style=" width:50px;height:50px;border-radius: 50%;" />
+                        }
+                    </div>
+                </dl>
+            </div>
+            <div class="card-block">
+                <div class="row">
+                    <div class="col-md-12">
+                      
+                            <dl class="row">
+                            <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CompanyName)
+        </dd>
+  
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CountryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CountryName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CityName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CityName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PostalCode)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PostalCode)
+        </dd>
+
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tool)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tool)
+        </dd>
+    </dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+    <div>
+
+        <a asp-action="GetCompanyDetails">Back to List</a>
+    </div>
+</div>
+

@@ -1,0 +1,97 @@
+﻿@model TrainingCoreProject.Model.ViewModels.Company.CompanyModel
+
+@{
+    ViewData["Title"] = "AddEditCompany";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div class="row" style="width:70%; margin-left:250px;">
+<div class="col-md-12">
+<div class="card">
+<div class="card-header">
+    <h5>AddEditCompany</h5>
+</div>
+<div class="card-block">
+<div class="row">
+    <div class="col-md-12">
+         <form asp-action="AddEditCompany" class="form-material" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+               
+                <input asp-for="Id" class="form-control" type="hidden"/>
+           
+            </div>
+                    <div class="input-box address">
+                        @if (TempData["Image"] != null)
+                        {
+                            <img src="~/companylogos/@TempData["Image"]" style=" width:80px;height:80px;border-radius: 50%;" />
+                        }
+                        else
+                        {
+                            <img src="~/companylogos/@Model.Image" style="width:80px;height:80px;border-radius: 50%;" />
+                        }
+                        <input name="file" class="form-control-file" type="file" />
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+
+            <div class="form-group form-info">
+                <select asp-for="CompanyId" class="form-control" asp-items="@ViewBag.companyList">
+                            <option selected>--Select Company--</option>
+                 </select>
+               <span asp-validation-for="CompanyId" class="text-danger"></span>
+            </div>
+
+                    <div class="form-group form-info">
+                        <select asp-for="CountryId" class="form-control" asp-items="@ViewBag.countryList">
+                            <option selected>--Select Country--</option>
+                        </select>
+                        <span asp-validation-for="CountryId" class="text-danger"></span>
+                    </div>
+       
+            <div class="form-group form-info">
+                <input asp-for="CityName" class="form-control" />
+                        <span class="form-bar"></span>
+                <label asp-for="CityName" class="float-label"></label>
+                <span asp-validation-for="CityName" class="text-danger"></span>
+            </div>
+            <div class="form-group form-info">
+                <input asp-for="PostalCode" class="form-control" />
+                        <span class="form-bar"></span>
+                <label asp-for="PostalCode" class="float-label"></label>
+                <span asp-validation-for="PostalCode" class="text-danger"></span>
+            </div>
+          
+        
+            <div class="form-group form-info form-check-inline">
+           
+               
+                        <label asp-for="Tool" class="radio-inline">
+                            <input asp-for="Tool" value="Change Matrix" type="radio" name="tool">Change Matrix
+                        </label>
+                        <label asp-for="Tool" class="radio-inline">
+                            <input asp-for="Tool" value="Training Analysis" type="radio" name="tool">Training Analysis
+                        </label>
+                <span asp-validation-for="Tool" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                                @if(TempData["Id"] == null)
+                                {
+
+                                    <input type="submit" value="ADD" class="btn btn-outline-primary" />
+                                }
+                                else
+                                {
+                                    <input type="submit" value="Save Changes" class="btn btn-outline-primary" />
+                                }
+                            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+    </div>
+
+<div>
+    <a asp-action="GetCompanyDetails">Back to List</a>
+</div>
+</div>
